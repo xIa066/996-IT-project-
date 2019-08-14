@@ -1,0 +1,5 @@
+.iconImage {
+  width: 70%;
+  float: right;
+  transition: opacity 0.5s linear
+}

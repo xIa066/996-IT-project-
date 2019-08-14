@@ -1,0 +1,102 @@
+body {
+  background-color: #c5e4f4;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+@font-face {
+  font-family: 'League Spartan';
+  src: url('leaguespartan-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.text {
+font-family: 'League Spartan', sans-serif;
+color: #394964;
+}
+
+.bottomBackground {
+margin: 0px;
+padding: 0px;
+z-index: -1;
+}
+
+.box-container {
+    border-radius: 12px;
+    padding: 25px;
+    background: rgba(255,255,255,0.80);
+    box-shadow: 20px 20px 6px rgba(0,0,0,0.16);
+    margin: 0 auto;
+}
+
+.background-img {
+background-color: #ffffff;
+}
+
+
+.bkg-animated {
+  background: transparent url('./components/static/clouds.png') repeat-x;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  padding-top: 70px;
+  box-sizing: border-box;
+  animation: slide 60s linear infinite;
+}
+
+.start-bkg-container-scroll {
+  position: relative;
+  margin-top: -20vh;
+  z-index: -1;
+}
+
+.bkg-container {
+  position: relative;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 600px) {
+  .start-bkg-container-scroll {
+    position: relative;
+    margin-top: -20vh;
+    z-index: -1;
+  }
+
+  .bkg-container {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -1280px 0; }
+}
+
+.yes {
+  margin: 5px;
+  min-width: 100px;
+  font-family: 'League Spartan', sans-serif;
+  color: #394964;
+  background-color: #8CC63F;
+
+}
+
+.yes:hover {
+  color: white;
+}
+
+.no {
+  margin: 5px;
+  min-width: 100px;
+  font-family: 'League Spartan', sans-serif;
+  color: #9ECC60;
+  background-color: #394964;
+}
+
+.no:hover {
+  color: white;
+}

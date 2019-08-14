@@ -1,0 +1,11 @@
+{
+  "clear-day": "./static/sunny.png",
+  "clear-night": "./static/moon.png",
+  "cloudy": "./static/stormy.png",
+  "partly-cloudy-day": "./static/cloudysun.png",
+  "partly-cloudy-night": "./static/cloudymoon.png",
+  "rain": "./static/rainy.png",
+  "fog": "./static/foggy.png",
+  "wind": "./static/windy.png",
+  "thunder": "./static/thunder.png"
+ }

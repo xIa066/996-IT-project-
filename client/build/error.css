@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'League Spartan';
+  src: url('leaguespartan-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+.titleWHERE {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 200%;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #330000;
+  text-shadow: 5px 5px 6px rgba(0,0,0,0.16);
+}
+.titleTO {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 200%;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #330000;
+  vertical-align: top;
+  text-shadow: 5px 5px 6px rgba(0,0,0,0.16);
+}
+
+.titleBIKE {
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 400;
+  font-size: 200px;
+  letter-spacing: 4px;
+  color: #8b0000;
+  margin-top: -112px;
+  margin-left: 60px;
+  text-shadow: 5px 5px 6px rgba(0,0,0,0.16);
+}
+
+.linkToHome {
+  text-decoration: 'none';
+}
+
+body {
+  background-color: #660000;
+  background-image: linear-gradient(to bottom, #ff0000, #660000);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+
+.bottomBackground {
+margin: 0px;
+padding: 0px;
+z-index: -1;
+}
+
+.background-img {
+background-color: #ffffff;
+}
+
+
+.bkg-animated {
+  background: transparent url('./clouds.png') repeat-x;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  padding-top: 70px;
+  box-sizing: border-box;
+  animation: slide 60s linear infinite;
+}
+
+.start-bkg-container-scroll {
+  position: relative;
+  margin-top: -20vh;
+  z-index: -1;
+}
+
+.bkg-container {
+  position: relative;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 600px) {
+  .start-bkg-container-scroll {
+    position: relative;
+    margin-top: -20vh;
+    z-index: -1;
+  }
+
+  .bkg-container {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -1280px 0; }
+}

@@ -1,0 +1,29 @@
+.text {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #394969;
+}
+
+.text_small {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 90%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #394969;
+}
+
+.navbar {
+    border-color: transparent;
+}
+.dropdown-menu {
+    background-color:transparent;
+    border-color: transparent;
+    padding-right: 5px;
+    padding-top: 0;
+    min-width: 0px;
+    z-index: 1000;
+}
+
+
