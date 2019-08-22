@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="register.css" />
+<form id="register-form" action="/register" method="POST">
+    <div>
+        <input id="username" type="text" name="username" required="" placeholder=" " />
+        <label for="username"> UserName</label>
+    </div>
+    <div>
+        <input id="email" type="email" name="email" required="" placeholder=" " />
+        <label for="email">Email Address</label>
+        <div class="requirements">Must be a valid email address.</div>
+    </div>
+    <div>
+        <input id="password" type="password" name="password" required="" placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+        <label for="password">Password</label>
+        <div class="requirements">Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.</div>
+    </div>
+    <input type="submit" value="Sign Up" />
+</form>

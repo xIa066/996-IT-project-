@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+#register-form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+#register-form > div {
+    position: relative;
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+#register-form > div > label {
+    opacity: 0.3;
+    font-weight: bold;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+}
+#register-form > div > input[type="text"],
+#register-form > div > input[type="email"],
+#register-form > div > input[type="password"] {
+    width: 100%;
+    border: 0;
+    padding: 20px 20px 20px 50px;
+    background: #eee;
+}
+#register-form > div > input[type="text"]:focus,
+#register-form > div > input[type="email"]:focus,
+#register-form > div > input[type="password"]:focus {
+    outline: 0;
+    background: white;
+}
+#register-form > div > input[type="text"]:focus + label,
+#register-form > div > input[type="email"]:focus + label,
+#register-form > div > input[type="password"]:focus + label {
+    opacity: 0;
+}
+#register-form > div > input[type="text"]:valid,
+#register-form > div > input[type="email"]:valid,
+#register-form > div > input[type="password"]:valid {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}
+#register-form > div > input[type="text"]:valid + label,
+#register-form > div > input[type="email"]:valid + label,
+#register-form > div > input[type="password"]:valid + label {
+    opacity: 0;
+}
+#register-form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+#register-form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+#register-form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+    background: pink;
+}
+#register-form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label,
+#register-form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + label,
+#register-form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) + label {
+    opacity: 0;
+}
+#register-form > div > input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
+#register-form > div > input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
+#register-form > div > input[type="password"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
+    max-height: 200px;
+    padding: 0 30px 20px 50px;
+}
+#register-form > div .requirements {
+    padding: 0 30px 0 50px;
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+}
+#register-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    background: #41D873;
+    color: white;
+    border: 0;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+body {
+    background: #333;
+    font-family: 'PT Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
