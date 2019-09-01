@@ -5,7 +5,7 @@ var artifactSchema = new mongoose.Schema(
 	{
 		"name": String,
 		"date": {type: Date, default: Date.now},
-		"link": String, // URL
+		"photo": String, // URL link
 		"ownerID": Number，
 		"description": String
 		// "comments": [{body: String, date: Date}],
