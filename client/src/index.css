@@ -11,6 +11,7 @@ h1,h2,h3,h4,h5,h6,.navbar {
 }
 
 body {
+      padding-top: 75px;
 }
 
 a {
@@ -137,4 +138,5 @@ img {
     #social {
         padding-bottom: 70px;
     }
+
 }
