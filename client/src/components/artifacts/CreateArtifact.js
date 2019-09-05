@@ -1,5 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { createArtifact } from '../../actions';
 
 class CreateArtifact extends React.Component {
   renderError({ error, touched }){
@@ -27,16 +29,17 @@ class CreateArtifact extends React.Component {
     );
   }
 
-  onSubmit(formValues){
-    console.log(formValues);
+  onSubmit = (formValues) => {
+    this.props.createArtifact(formValues);
   }
 
   render(){
     return(
       <form className="needs-validation" onSubmit={this.props.handleSubmit(this.onSubmit)} noValidate>
-        <Field name="title" component={this.renderInput} label="Enter Title" placeholder="Title..." id="inputTitle" />
-        <Field name="place" component={this.renderInput} label="Enter Place" placeholder="Place..." id="inputPlace" />
-        <Field name="type" component={this.renderInput} label="Enter Type" placeholder="Type..." id="inputType" />
+        <Field name="name" component={this.renderInput} label="Enter Name" placeholder="Title..." id="inputTitle" />
+        <Field name="date" component={this.renderInput} label="Enter Date" placeholder="DD/MM/YYYY" id="inputDate" />
+        <Field name="photo" component={this.renderInput} label="Enter Photo URL" placeholder="Photo URL" id="inputPhoto" />
+        <Field name="ownerID" component={this.renderInput} label="Enter User ID" placeholder="00000" id="inputID" />
         <Field name="description" component={this.renderInput} label="Enter Description" placeholder="Description..." id="inputDesc" />
         <input className="btn btn-secondary" type="submit" value="Submit" />
       </form>
@@ -65,7 +68,9 @@ const validate = formValues => {
   return errors;
 }
 
-export default reduxForm({
+const wrappedForm = reduxForm({
   form: 'createArtifact',
   validate
 })(CreateArtifact);
+
+export default connect(null, { createArtifact })(wrappedForm);

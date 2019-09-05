@@ -8,6 +8,7 @@ import CategoryPage from './pages/CategoryPage';
 import GalleryPage from './pages/GalleryPage';
 import SocialPage from './pages/SocialPage';
 import CreateArtifactPage from './pages/CreateArtifactPage';
+import ArtifactsListPage from './pages/ArtifactsListPage';
 
 import './index.css'
 
@@ -22,6 +23,7 @@ class App extends React.Component {
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/social" component={SocialPage} />
           <Route path="/create-artifact" component={CreateArtifactPage} />
+          <Route path="/artifacts" exact component={ArtifactsListPage} />
         </div>
       </BrowserRouter>
      );
