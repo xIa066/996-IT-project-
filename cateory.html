@@ -1,6 +1,7 @@
-<link rel="stylesheet" href="register.css" />
+<link rel="stylesheet" href="cateory.css" />
 <link rel="stylesheet" href="bootstrap.min.css">
 <link href="font-awesome.min.css" rel="stylesheet">
+
 <!-- Default Theme -->
 
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
@@ -22,23 +23,32 @@
         </div><!--/.navbar-collapse -->
     </div>
 </div>
-<form id="register-form" action="/register" method="POST">
-    <div>
-        <input id="username" type="text" name="username" required="" placeholder=" " />
-        <label for="username"> UserName</label>
-    </div>
-    <div>
-        <input id="email" type="email" name="email" required="" placeholder=" " />
-        <label for="email">Email Address</label>
-        <div class="requirements">Must be a valid email address.</div>
-    </div>
-    <div>
-        <input id="password" type="password" name="password" required="" placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
-        <label for="password">Password</label>
-        <div class="requirements">Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.</div>
-    </div>
-    <input type="submit" value="Sign Up" />
-</form>
+
+
+<div class="wrapper">
+    <a href="#" class="button">Age</a>
+</div>
+
+<button  class="btn btn--stripe" style='font-size:30px' >Time</button>
+
+
+<div class="button-container-1">
+    <span class="mas">MASK1</span>
+    <button id='work' type="button" name="Hover">Time</button>
+</div>
+
+<div class="button-container-2">
+    <span class="mas">MASK2</span>
+    <button type="button" name="Hover">Age</button>
+</div>
+
+<div class="button-container-3">
+    <span class="mas">MASK3</span>
+    <button type="button" name="Hover">Traveling</button>
+</div>
 
 <script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+
+
