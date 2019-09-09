@@ -15,9 +15,7 @@ class CarouselImages extends React.Component {
           <div className="carousel-item active">
             <img src={famImage} className="d-block w-100" alt="..."/>
           </div>
-          <div className="carousel-item">
-            <img src={secondImage} className="d-block w-100" alt="..."/>
-          </div>
+          {/*insert new carousel images below these curly braces*/}
         </div>
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <img src={prevButton} alt="Previous" />

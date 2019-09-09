@@ -15,12 +15,12 @@
 }
 
 .justify-content-end {
-  margin-right: -80px
+  margin-right: -3em;
 }
 
 .nav-link {
     padding-top:25px;
-    padding-bottom:25px;
+    padding-bottom: 25px;
     margin-right: 7px;
     margin-left: 7px;
 }
@@ -35,7 +35,7 @@
     text-decoration: none;
 }
 
-.nav>li:hover,.nav>li:focus {
+.nav-item:hover {
     background-color:#ec343c;
     color: white;
 }
