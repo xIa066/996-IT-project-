@@ -4,10 +4,11 @@ var mongoose = require('mongoose');
 var usersSchema = new mongoose.Schema(
 	{
 		"name": String,
-		"password": String,
+		"userID": Number,
 		"email": String, // https://www.npmjs.com/package/mongoose-type-email
 		"birth": Date,
-		"bio": String
+		"bio": String,
+		"photo": {type: String, required: false} // optional
 	}
 );
 
