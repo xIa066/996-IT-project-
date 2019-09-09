@@ -7,7 +7,7 @@ var usersSchema = new mongoose.Schema(
 		"userID": Number,
 		"email": String, // https://www.npmjs.com/package/mongoose-type-email
 		"birth": Date,
-		"bio": String,
+		"bio": {type: String, required: false},
 		"photo": {type: String, required: false} // optional
 	}
 );
