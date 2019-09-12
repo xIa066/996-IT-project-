@@ -27,6 +27,16 @@ var findArtifactByOwner = function(req,res){
     });
 };
 
+var findArtifactByObject = function (req, res){
+    var obj = req.params.id;
+    Artifact.find({_id:obj}, function(err, artifact){
+        if(!err && artifact[0] != null) {
+            res.send(artifact);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
 
 // create a new artifact and store details
 var createArtifact = function(req, res){
@@ -51,3 +61,4 @@ var createArtifact = function(req, res){
 module.exports.findAllArtifacts = findAllArtifacts;
 module.exports.createArtifact = createArtifact;
 module.exports.findArtifactByOwner = findArtifactByOwner;
+module.exports.findArtifactByObject = findArtifactByObject;

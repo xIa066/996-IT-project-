@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 
 // page imports
 import HomePage from './pages/HomePage';
@@ -9,13 +9,16 @@ import GalleryPage from './pages/GalleryPage';
 import SocialPage from './pages/SocialPage';
 import CreateArtifactPage from './pages/CreateArtifactPage';
 import ArtifactsListPage from './pages/ArtifactsListPage';
+import ArtifactPage from './pages/ArtifactPage';
+import history from './history';
 
 import './index.css'
+
 
 class App extends React.Component {
    render(){
      return(
-      <BrowserRouter>
+      <Router history={history}>
         <div>
           <Route path="/" exact component={HomePage} />
           <Route path="/about" component={AboutPage} />
@@ -24,8 +27,9 @@ class App extends React.Component {
           <Route path="/social" component={SocialPage} />
           <Route path="/create-artifact" component={CreateArtifactPage} />
           <Route path="/artifacts" exact component={ArtifactsListPage} />
+          <Route path="/artifacts/view/:id" exact component={ArtifactPage} />
         </div>
-      </BrowserRouter>
+      </Router>
      );
    }
 }

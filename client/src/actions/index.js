@@ -1,4 +1,5 @@
 import artifacts from '../apis/artifacts';
+import history from '../history';
 import {
   FETCH_ARTIFACTS,
   CREATE_ARTIFACT,
@@ -17,22 +18,24 @@ export const createArtifact = formValues => async dispatch => {
   const response = await artifacts.post('/createArtifact', formValues);
 
   dispatch({ type: CREATE_ARTIFACT, payload: response.data});
+  history.push('/artifacts');
 }
 
 export const fetchArtifact = id => async dispatch => {
-  const response = await artifacts.get(`/artifacts/${id}`);
+  const response = await artifacts.get(`/getArtifact/${id}`);
 
+  console.log(response.data);
   dispatch({ type: FETCH_ARTIFACT, payload: response.data });
 }
 
 export const editArtifact = (id, formValues) => async dispatch =>{
-  const response = await artifacts.put(`/artifacts/${id}`, formValues);
+  const response = await artifacts.put(`/getArtifact/${id}`, formValues);
 
   dispatch({ type: EDIT_ARTIFACT, payload: response.data });
 }
 
 export const deleteArtifact = id => async dispatch => {
-  await artifacts.delete(`/artifacts/${id}`);
+  await artifacts.delete(`/getArtifact/${id}`);
 
   dispatch({ type: DELETE_ARTIFACT, payload: id });
 }
