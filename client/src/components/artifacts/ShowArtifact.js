@@ -7,6 +7,13 @@ class ShowArtifact extends React.Component{
         this.props.fetchArtifact(this.props.match.params.id);
     }
     
+
+    renderArtifact(){
+        return(
+            <div className="">Artifact Rendering...</div>
+        );
+    }
+    
     render(){
         return(
             <div>YAHHWEORJ</div>
