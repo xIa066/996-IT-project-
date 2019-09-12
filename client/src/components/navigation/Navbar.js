@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './navbar.css'
+import '../../styles/navbar.css'
 
 class Navbar extends React.Component {
   render(){
     return(
-      <div id="top" className="navbar navbar-expand-lg navbar-dark fixed-top py-1" role="navigation">
+      <div id="top" className="navbar navbar-expand-lg navbar-dark fixed-top py-0" role="navigation">
           <div className="container">
           <Link className="navbar-brand" to="/"><strong>Bloodlines,</strong>Tales and Roots</Link>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
