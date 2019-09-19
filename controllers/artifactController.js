@@ -53,7 +53,7 @@ var createArtifact = function(req, res){
             res.send(artifact);
         }
         else{
-            res.sendStatus(400);
+            res.sendStatus(err.statusCode);
             console.log(err);
         }
     });

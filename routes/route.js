@@ -2,7 +2,6 @@ const express = require('express');
 const artifactControl = require('../controllers/artifactController.js');
 const awsControl = require('../controllers/awsController');
 const router = express.Router();
-const jsonParser = require('body-parser').json();
 
 //lists all available buckets
 router.get('/buckets', awsControl.getBuckets);
@@ -18,6 +17,8 @@ router.get('/getArtifact/:id', artifactControl.findArtifactByObject);
 
 // Creating an artifact
 router.post('/createArtifact', artifactControl.createArtifact);
+
+router.post('/uploadImage', awsControl.uploadToBucket);
 
 
 // export the route in the server.js
