@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const AWS = require('aws-sdk');
+const dotenv = require('dotenv');
 
 
 const PORT = 5000;
-
 const app = express();
 
 app.use(express.urlencoded({
@@ -19,11 +20,4 @@ var routes = require('./routes/route.js');
 app.use('/', routes);
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-
-
-/*
-path
-express-session
-passportSetup :file folder
-authRoutes :file folder
-*/
+console.log('fresh');

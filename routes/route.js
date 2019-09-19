@@ -1,9 +1,11 @@
 const express = require('express');
 const artifactControl = require('../controllers/artifactController.js');
+const awsControl = require('../controllers/awsController');
 const router = express.Router();
 const jsonParser = require('body-parser').json();
-// Display Home page, Setting up the route for the homepage
 
+//lists all available buckets
+router.get('/buckets', awsControl.getBuckets);
 
 // Finding all the artifact
 router.get('/artifacts', artifactControl.findAllArtifacts);
