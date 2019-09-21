@@ -18,6 +18,7 @@ router.get('/getArtifact/:id', artifactControl.findArtifactByObject);
 // Creating an artifact
 router.post('/createArtifact', artifactControl.createArtifact);
 
+// Upload an image
 router.post('/uploadImage', awsControl.uploadToBucket);
 
 

@@ -8,10 +8,6 @@ var artifactSchema = mongoose.Schema(
 		"photo": String,
 		"ownerID": String,
 		"description": String
-
-		// "comments": [{body: String, date: Date}],
-		// "likes": Number
-
 	},
 	{
 		collection: "artifacts"

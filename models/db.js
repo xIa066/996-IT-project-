@@ -18,4 +18,7 @@ err => {
 
 // This is where you require shemma
 require('./artifact.js');
-// auth0;passwords.js;
+require('./events.js');
+require('./family.js');
+require('./items.js');
+require('./users.js');
