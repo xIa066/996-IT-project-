@@ -2,7 +2,6 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 
 // page imports
-import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import CategoryPage from './pages/CategoryPage';
 import GalleryPage from './pages/GalleryPage';
@@ -11,6 +10,8 @@ import CreateArtifactPage from './pages/CreateArtifactPage';
 import ArtifactsListPage from './pages/ArtifactsListPage';
 import ArtifactPage from './pages/ArtifactPage';
 import history from './history';
+import NewHome from './pages/NewHome';
+
 
 import './index.css'
 
@@ -20,7 +21,7 @@ class App extends React.Component {
      return(
       <Router history={history}>
         <div>
-          <Route path="/" exact component={HomePage} />
+          <Route path="/" exact component={NewHome} />
           <Route path="/about" component={AboutPage} />
           <Route path="/category" component={CategoryPage} />
           <Route path="/gallery" component={GalleryPage} />

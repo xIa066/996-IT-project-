@@ -41,7 +41,7 @@ class ArtifactsList extends React.Component {
           </div>
           <div className={"col-6 ".concat(orders.pic)}>
             <Link to={`/artifacts/view/${artifact._id}`}>
-              <img className="img-fluid w-100 justify-content-center image" src={artifact.photo} />
+              <img className="img-fluid w-100 justify-content-center image" src={artifact.photo} alt=""/>
             </Link>
           </div>
         </div>
