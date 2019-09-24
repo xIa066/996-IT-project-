@@ -40,7 +40,8 @@ router.get('/logout', (req, res) => {
           console.log(err)
         }
         console.log("Destroyed the user session on Auth0 endpoint");
-        res.redirect('https://bloodlines.au.auth0.com/v2/logout?client_id=00BfjL4zO0b60UjoFTLszZKV744B5ZtO&returnTo=http://localhost:3000/loggedout');
+        // 
+        res.redirect('https://bloodlines.au.auth0.com/v2/logout?client_id=00BfjL4zO0b60UjoFTLszZKV744B5ZtO');
       });
     }
 });
