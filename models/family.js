@@ -3,8 +3,8 @@
 var mongoose = require('mongoose');
 var familySchema = new mongoose.Schema(
 	{
-		"name": String,
-		"familyCode": String,
+		"name": {type: String, required: true},
+		"familyCode": {type: String, required: true},
 		"owner": Number, // user ID
 		"members": [{"member": Number // userID
 	}]
