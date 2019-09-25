@@ -1,7 +1,10 @@
 const express = require('express');
 
-const userController = require('../controllers/userController');
-const artifactController = require('../controllers/artifactController');
+const familyController = require('../controllers/familyController.js');
+const router = express.Router();
+
+router.post('/createFamily', familyController.createFamily);
+
 
 
 module.exports = router;
