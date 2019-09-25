@@ -1,0 +1,16 @@
+#slider ul li .slider-caption h2 a, #slider ul li .slider-caption h2 a:hover {color:#fff;}        #content { width:1400px; }
+#sidebar { width:280px; }
+#sidebar.shop { width:170px; }
+.products li { width:164px !important; }
+.products li a strong { width:120px !important; }
+.products li a strong.inside-thumb { bottom:0px !important; }
+.products li.shadow a strong.inside-thumb { bottom:21px !important; }
+.products li.border a strong.inside-thumb { bottom:7px !important; }
+.products li.border.shadow a strong.inside-thumb { bottom:28px !important; }
+.products li a img { width:200px !important;height:200px !important; }
+div.product div.images { width:50%; }
+div.product div.images img { width:530px; }
+.layout-sidebar-no div.product div.summary { width:47%; }
+.layout-sidebar-right div.product div.summary, .layout-sidebar-left div.product div.summary { width:24.8%; }
+.wrapper-content { width:2000px; }
+
