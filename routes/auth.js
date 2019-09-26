@@ -4,9 +4,6 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var dotenv = require('dotenv');
-var util = require('util');
-var url = require('url');
-var querystring = require('querystring');
 
 dotenv.config();
 
@@ -40,20 +37,9 @@ router.get('/logout', (req, res) => {
           console.log(err)
         }
         console.log("Destroyed the user session on Auth0 endpoint");
-        res.redirect('https://bloodlines.au.auth0.com/v2/logout?client_id=00BfjL4zO0b60UjoFTLszZKV744B5ZtO&returnTo=http://localhost:3000/loggedout');
+        res.redirect(`https://${process.env.AUTH0_DOMAIN}/v2/logout?client_id=${process.env.AUTH0_CLIENT_ID}&returnTo=http://localhost:3000/loggedout`);
       });
     }
 });
-
-// req.logout();
-//   if (req.session) {
-//     req.session.destroy(function (err) {
-//       if (err) {
-//         console.log(err)
-//       }
-//       console.log("Destroyed the user session on Auth0 endpoint");
-//       res.redirect('https://bloodlines.au.auth0.com/v2/logout?client_id=00BfjL4zO0b60UjoFTLszZKV744B5ZtO&returnTo=http://localhost:3000/');
-//     });
-//   }
 
 module.exports = router;

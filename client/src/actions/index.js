@@ -5,7 +5,8 @@ import {
   CREATE_ARTIFACT,
   EDIT_ARTIFACT,
   DELETE_ARTIFACT,
-  FETCH_ARTIFACT
+  FETCH_ARTIFACT,
+  UPLOAD_IMAGE,
 } from './types';
 
 export const fetchArtifacts = () => async dispatch => {
@@ -38,4 +39,12 @@ export const deleteArtifact = id => async dispatch => {
   await artifacts.delete(`/getArtifact/${id}`);
 
   dispatch({ type: DELETE_ARTIFACT, payload: id });
+}
+
+export const uploadImage = fileData => async dispatch => {
+  const config = { headers: {'content-type': 'multipart/form-data'} }
+  const response = await artifacts.post(`/uploadImage`, fileData, config);
+
+  console.log(response.data);
+  dispatch({ type: UPLOAD_IMAGE, payload: response.data });
 }

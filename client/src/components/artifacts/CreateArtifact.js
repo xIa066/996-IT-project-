@@ -1,11 +1,12 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, change } from 'redux-form';
 import { connect } from 'react-redux';
-import { createArtifact } from '../../actions';
+import { createArtifact, uploadImage } from '../../actions';
 
 import './imageInput.css';
 
 class CreateArtifact extends React.Component {
+
   renderError({ error, touched }){
     return(
       <div className="invalid-feedback">
@@ -61,9 +62,14 @@ class CreateArtifact extends React.Component {
     );
   }
 
-  onSubmit = (formValues) => {
+  onSubmit = async (formValues) => {
+    var fileData = new FormData();
+    var imageFile = document.querySelector('#imageInput');
+    fileData.append("image", imageFile.files[0]);
+    await this.props.uploadImage(fileData);
+    console.log(this.props.upload);
+    formValues.photo = this.props.upload.url;
     this.props.createArtifact(formValues);
-    
   }
 
   render(){
@@ -101,9 +107,13 @@ const validate = formValues => {
   return errors;
 }
 
+const mapStateToProps = state => {
+  return { upload: state.upload };
+}
+
 const wrappedForm = reduxForm({
   form: 'createArtifact',
   validate
 })(CreateArtifact);
 
-export default connect(null, { createArtifact })(wrappedForm);
+export default connect(mapStateToProps, { change, uploadImage, createArtifact })(wrappedForm);

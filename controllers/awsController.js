@@ -1,6 +1,4 @@
 const AWS = require('aws-sdk');
-const multer = require('multer');
-const multerS3 = require('multer-s3');
 require('../services/aws');
 
 const upload = require('../services/image-upload');
@@ -22,7 +20,7 @@ var getBuckets = function(req, res){
 var uploadToBucket = function(req, res){
     singleImageUpload(req, res, function(err){
         if(!err){
-            res.send({imageUrl: req.file.location});
+            res.send({photo: req.file.location});
         }else{
             res.sendStatus(404);
             console.log(err);
