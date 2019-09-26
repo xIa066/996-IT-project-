@@ -19,6 +19,7 @@ var createFamily = function(req, res){
     });
 };
 
+// produce random code with length
 function makeid(length) {
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -29,4 +30,18 @@ function makeid(length) {
    return result;
 };
 
+
+
+var findAllFamily = function(req,res){
+    Family.find(function(err,family){
+        if(!err){
+            res.send(family);
+        }
+        else{
+            res.sendStatus(404);
+            }
+    });
+};
+
 module.exports.createFamily = createFamily;
+module.exports.findAllFamily = findAllFamily;
