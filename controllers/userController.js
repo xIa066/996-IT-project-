@@ -3,7 +3,6 @@ const Users = mongoose.model('user');
 
 
 
-
 // creat a new user
 var createUser = function(req, res){
     var user = new Users({
