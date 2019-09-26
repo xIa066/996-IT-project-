@@ -1,5 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');;
+const bodyParser = require('body-parser');
+
+var routes = require('./routes/route.js');
 
 const PORT = 5000;
 
@@ -9,7 +11,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./models/db.js');
-var routes = require('./routes/route.js');
 app.use('/', routes);
 
 
