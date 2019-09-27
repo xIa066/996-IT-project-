@@ -8,6 +8,7 @@ var util = require('util');
 var url = require('url');
 var querystring = require('querystring');
 
+
 dotenv.config();
 
 // Perform the login, after login Auth0 will redirect to callback
