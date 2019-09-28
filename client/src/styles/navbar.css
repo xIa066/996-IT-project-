@@ -1,0 +1,41 @@
+.navbar-dark {
+    background:#525252;
+    z-index: 99999;
+}
+
+.navbar-dark a {
+    /*color:rgb(153,160,162);*/
+    color: rgb(205, 209, 210);
+}
+
+.navbar-brand {
+    height:70px;
+    padding:20px;
+    margin-left: -80px;
+}
+
+.justify-content-end {
+  margin-right: -3em;
+}
+
+.nav-link {
+    padding-top:25px;
+    padding-bottom: 25px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.navbar-brand>strong {
+    color: white;
+    margin-right:2px;
+}
+
+.navbar-brand:hover {
+    color: #ec343c;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    background-color:#e9ab00;
+    color: black;
+}
