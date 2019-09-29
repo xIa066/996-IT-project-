@@ -59,7 +59,20 @@ var createArtifact = function(req, res){
     });
 };
 
+// Deletes artifact by id
+var deleteArtifact = function(req, res){
+    Artifact.findByIdAndDelete(req.params.id, function(err, artifact){
+        if(!err){
+            console.log("Artifact Successfully Deleted!");
+            res.send(artifact);
+        }else{
+            console.log(err);
+        }
+    });
+}
+
 module.exports.findAllArtifacts = findAllArtifacts;
 module.exports.createArtifact = createArtifact;
 module.exports.findArtifactByOwner = findArtifactByOwner;
 module.exports.findArtifactByObject = findArtifactByObject;
+module.exports.deleteArtifact = deleteArtifact;
