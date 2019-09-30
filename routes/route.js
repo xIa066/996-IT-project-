@@ -27,5 +27,7 @@ router.post('/uploadImage', awsControl.uploadToBucket);
 router.delete('/delete/:id', artifactControl.deleteArtifact);
 
 
+router.put('/update/:id', artifactControl.updateArtifact);
+
 // export the route in the server.js
 module.exports = router;
