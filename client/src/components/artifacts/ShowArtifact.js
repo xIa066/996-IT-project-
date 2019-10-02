@@ -10,14 +10,30 @@ class ShowArtifact extends React.Component{
 
     renderArtifact(){
         return(
-            <div className="">Artifact Rendering...</div>
+            <div className="row">
+                <div className="col-6">
+                    <img src={this.props.artifact[0].photo} />
+                </div>
+                <div className="col-6">
+                    <div className="row">
+                        <h1>{this.props.artifact[0].name}</h1>
+                    </div>
+                    <div className="row">
+                        <h3>{this.props.artifact[0].description}</h3>
+                    </div>
+                </div>
+            </div>
         );
     }
     
     render(){
-        return(
-            <div>YAHHWEORJ</div>
-        );
+        if(this.props.artifact[0]){
+            return(
+                <div className="container">{this.renderArtifact()}</div>
+            );
+        }else{
+            return null;
+        }
     }
 }
 

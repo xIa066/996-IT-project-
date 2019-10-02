@@ -3,7 +3,6 @@ const artifactControl = require('../controllers/artifactController.js');
 const awsControl = require('../controllers/awsController');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Artifact = mongoose.model('Artifact');
 
 //lists all available buckets
 router.get('/buckets', awsControl.getBuckets);
@@ -26,7 +25,7 @@ router.post('/uploadImage', awsControl.uploadToBucket);
 // delete artifact by id
 router.delete('/delete/:id', artifactControl.deleteArtifact);
 
-
+// update artifact
 router.put('/update/:id', artifactControl.updateArtifact);
 
 // export the route in the server.js

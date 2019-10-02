@@ -16,6 +16,8 @@ err => {
     console.log('Error connecting to database due to: ', err);
 });
 
+mongoose.set('useFindAndModify', false);
+
 // This is where you require shemma
 require('./artifact.js');
 require('./events.js');

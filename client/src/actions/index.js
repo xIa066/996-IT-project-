@@ -19,7 +19,7 @@ export const createArtifact = formValues => async dispatch => {
   const response = await artifacts.post('/createArtifact', formValues);
 
   dispatch({ type: CREATE_ARTIFACT, payload: response.data});
-  history.push('/artifacts');
+  history.push('/');
 }
 
 export const fetchArtifact = id => async dispatch => {
@@ -30,15 +30,17 @@ export const fetchArtifact = id => async dispatch => {
 }
 
 export const editArtifact = (id, formValues) => async dispatch =>{
-  const response = await artifacts.put(`/getArtifact/${id}`, formValues);
+  const response = await artifacts.put(`/update/${id}`, formValues);
 
   dispatch({ type: EDIT_ARTIFACT, payload: response.data });
+  history.push(`/artifacts/view/${id}`);
 }
 
 export const deleteArtifact = id => async dispatch => {
-  await artifacts.delete(`/getArtifact/${id}`);
+  await artifacts.delete(`/delete/${id}`);
 
   dispatch({ type: DELETE_ARTIFACT, payload: id });
+  history.push('/');
 }
 
 export const uploadImage = fileData => async dispatch => {
