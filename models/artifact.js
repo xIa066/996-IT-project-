@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var artifactSchema = mongoose.Schema(
 	{
 		"name": String,
-		"date": {type: Date, default: Date.now},
+		"date": String,
 		"photo": String,
 		"ownerID": String,
 		"description": String

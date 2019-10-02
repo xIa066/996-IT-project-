@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchArtifact } from '../../actions';
+import { fetchArtifact, deleteArtifact } from '../../actions';
 
 class ShowArtifact extends React.Component{
     componentDidMount() {
         this.props.fetchArtifact(this.props.match.params.id);
     }
     
-
     renderArtifact(){
         return(
             <div className="row">
@@ -20,6 +19,10 @@ class ShowArtifact extends React.Component{
                     </div>
                     <div className="row">
                         <h3>{this.props.artifact[0].description}</h3>
+                    </div>
+                    <div className="row">
+                        <button type="button" class="btn btn-secondary mx-1">Edit</button>
+                        <button type="button" class="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.match.params.id)}}>Delete</button>
                     </div>
                 </div>
             </div>
@@ -41,4 +44,4 @@ const mapStateToProps = state =>{
     return { artifact: Object.values(state.artifacts)}
 }
 
-export default connect(mapStateToProps, { fetchArtifact })(ShowArtifact);
+export default connect(mapStateToProps, { fetchArtifact, deleteArtifact })(ShowArtifact);

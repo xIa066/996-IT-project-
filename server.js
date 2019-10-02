@@ -64,6 +64,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(userInViews());
+
+app.use(( err, req, res, next ) => {
+  res.locals.error = err;
+  if (err.status >= 100 && err.status < 600)
+    res.status(err.status);
+  else
+    res.status(500);
+  res.render('error');
+});
+
 app.use('/', authRouter);
 app.use('/', indexRouter);
 app.use('/', usersRouter);
