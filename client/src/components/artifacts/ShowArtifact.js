@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchArtifact, deleteArtifact } from '../../actions';
 
 class ShowArtifact extends React.Component{
@@ -21,7 +22,9 @@ class ShowArtifact extends React.Component{
                         <h3>{this.props.artifact[0].description}</h3>
                     </div>
                     <div className="row">
-                        <button type="button" class="btn btn-secondary mx-1">Edit</button>
+                        <Link to={`/artifacts/edit/${this.props.match.params.id}`}>
+                            <button type="button" class="btn btn-secondary mx-1">Edit</button>
+                        </Link>
                         <button type="button" class="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.match.params.id)}}>Delete</button>
                     </div>
                 </div>
@@ -41,7 +44,8 @@ class ShowArtifact extends React.Component{
 }
 
 const mapStateToProps = state =>{
-    return { artifact: Object.values(state.artifacts)}
+    const artifact = Object.values(state.artifacts);
+    return { artifact: artifact}
 }
 
 export default connect(mapStateToProps, { fetchArtifact, deleteArtifact })(ShowArtifact);

@@ -11,7 +11,7 @@ import ArtifactsListPage from './pages/ArtifactsListPage';
 import ArtifactPage from './pages/ArtifactPage';
 import history from './history';
 import NewHome from './pages/NewHome';
-
+import EditArtifactPage from './pages/EditArtifactPage';
 
 import './index.css'
 
@@ -29,6 +29,7 @@ class App extends React.Component {
           <Route path="/create-artifact" component={CreateArtifactPage} />
           <Route path="/artifacts" exact component={ArtifactsListPage} />
           <Route path="/artifacts/view/:id" exact component={ArtifactPage} />
+          <Route path="/artifacts/edit/:id" exact component={EditArtifactPage} />
         </div>
       </Router>
      );
