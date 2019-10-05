@@ -15,9 +15,9 @@ router.get('/login', passport.authenticate('auth0', {
 }), (req, res) => {
   // This is the URL that redirect after thrid party login page
   console.log('1');
-  // res.redirect('http://localhost:3000');
+   res.redirect('http://localhost:3000');
 });
-
+router.get('/getUser', (req,res)=>{console.log(req.user)});
 // Perform the final stage of authentication and redirect to previously requested URL or '/user'
 router.get('/callback', function (req, res, next) {
   console.log("2");
@@ -28,13 +28,16 @@ router.get('/callback', function (req, res, next) {
       return next(err);}
     if (!user) { 
       console.log('5');
-      return res.redirect('/login'); }
+      // return res.redirect('/login'); 
+    }
+    console.log(user);
     req.logIn(user, function (err) {
       console.log('6');
       if (err) { return next(err); }
-      const returnTo = req.session.returnTo;
-      delete req.session.returnTo;
-      res.redirect(returnTo || '/user');
+      // const returnTo = req.session.returnTo;
+      // delete req.session.returnTo;
+      // res.redirect(returnTo || '/user');
+      console.log('17');
     });
   })(req, res, next);
 });
