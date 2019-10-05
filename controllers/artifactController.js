@@ -3,7 +3,7 @@ const Artifact = mongoose.model('artifact');
 
 
 // find all artifact
-var findAllArtifact = function(req,res){
+var findAllArtifacts = function(req,res){
     Artifact.find(function(err,artifact){
         if(!err){
             res.send(artifact);
@@ -13,6 +13,20 @@ var findAllArtifact = function(req,res){
             }
     });
 };
+
+// find artifact by types
+var findAritfactByType = function(req, res){
+    var isItem = req.params.isItem;
+    Artifact.find({isItem:isitem}, function(err,artifact){
+        if(!err && artifact[0] != null){
+            res.send(artifact);
+        }
+        else{
+            res.sendStatus(404);
+        }
+    });
+}
+
 
 // find artifact by owner id
 var findArtifactByOwner = function(req,res){
@@ -35,7 +49,8 @@ var createArtifact = function(req, res){
         "date": req.body.date,
         "photo": req.body.photo,
         "ownerID": req.body.ownerID,
-        "descripton": req.body.descripton
+        "descripton": req.body.descripton,
+        "isItem": req.body.isItem
     });
     artifact.save(function(err, artifact){
         if(!err){
@@ -47,6 +62,7 @@ var createArtifact = function(req, res){
     });
 };
 
-module.exports.findAllArtifact = findAllArtifact;
+module.exports.findAllArtifacts = findAllArtifacts;
 module.exports.createArtifact = createArtifact;
 module.exports.findArtifactByOwner = findArtifactByOwner;
+module.exports.findAritfactByType = findAritfactByType;
