@@ -5,11 +5,8 @@ var artifactSchema = mongoose.Schema(
 		"date": String,
 		"photo": String,
 		"ownerID": String,
-		"description": String,
-		"isItem": Boolean
-	},
-	{
-		collection: "artifacts"
+		"isItem": Boolean,
+		"description": String
 	}
 );
 

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Artifact = mongoose.model('artifact');
+const Artifact = mongoose.model('Artifact');
 
 
 // find all artifact
