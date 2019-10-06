@@ -4,3 +4,4 @@ export const EDIT_ARTIFACT = 'EDIT_ARTIFACT';
 export const DELETE_ARTIFACT = 'DELETE_ARTIFACT';
 export const FETCH_ARTIFACT = 'FETCH_ARTIFACT';
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
+export const FETCH_USER = 'FETCH_USER';

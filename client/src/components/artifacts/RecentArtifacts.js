@@ -6,13 +6,14 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 //import action creators
-import { fetchArtifacts } from '../../actions'; 
+import { fetchArtifacts, fetchUser } from '../../actions'; 
 
 
 class RecentArtifacts extends React.Component{
 
     componentDidMount(){
         this.props.fetchArtifacts();
+        this.props.fetchUser();
     }
 
     renderList = (recentList) => {
@@ -61,4 +62,4 @@ const mapStateToProps = state => {
     return { artifacts: Object.values(state.artifacts) };
 }
 
-export default connect(mapStateToProps, { fetchArtifacts })(RecentArtifacts);
+export default connect(mapStateToProps, { fetchArtifacts, fetchUser })(RecentArtifacts);

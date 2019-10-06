@@ -31,6 +31,7 @@ var sess = {
   saveUninitialized: true
 };
 
+
 // if app is in production stage, serve secure cookies
 if (app.get('env') === 'production'){
   sess.cookie.secure = true;
@@ -43,9 +44,10 @@ var strategy = new Auth0Strategy(
     clientID: process.env.AUTH0_CLIENT_ID,
     clientSecret: process.env.AUTH0_CLIENT_SECRET,
     callbackURL:
-      process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000'
+      process.env.AUTH0_CALLBACK_URL || 'http://localhost:5000/callback'
   },
   function (accessToken, refreshToken, extraParams, profile, done) {
+    console.log(accessToken);
     return done(null, profile);
   }
 );
@@ -72,6 +74,7 @@ app.use(( err, req, res, next ) => {
   else
     res.status(500);
   res.render('error');
+  res.locals.user = req.user;
 });
 
 app.use('/', authRouter);

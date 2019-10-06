@@ -7,6 +7,7 @@ import {
   DELETE_ARTIFACT,
   FETCH_ARTIFACT,
   UPLOAD_IMAGE,
+  FETCH_USER,
 } from './types';
 
 export const fetchArtifacts = () => async dispatch => {
@@ -49,4 +50,10 @@ export const uploadImage = fileData => async dispatch => {
 
   console.log(response.data);
   dispatch({ type: UPLOAD_IMAGE, payload: response.data });
+}
+
+export const fetchUser = () => async dispatch =>{
+  const response = await artifacts.get("/user");
+  console.log(response);
+  dispatch({ type:FETCH_USER, payload: response.data });
 }
