@@ -18,29 +18,32 @@ router.get('/login', passport.authenticate('auth0', {
   res.redirect('/');
 });
 
+
 // Perform the final stage of authentication and redirect to previously requested URL or '/user'
 router.get('/callback', function (req, res, next) {
   passport.authenticate('auth0', function (err, user, info) {
+    // console.log(info);
     if (err) { return next(err); }
     if (!user) { 
-      console.log("no user");
       return res.redirect('/login');
      }
     req.logIn(user, function (err) {
       if (err) { return next(err); }
+      console.log(user);
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
-      res.redirect(returnTo || 'http://localhost:3000/');
+      const userId = user.id.substring(6);
+      res.redirect(returnTo || `http://localhost:3000/?authid=${userId}`);
     });
   })(req, res, next);
 });
 
 
 router.get('/getUser', function (req,res) {
-  console.log(req);
-  res.send(req.user);
   console.log(req.user);
+  res.send(req.user);
 });
+
 
 // Perform session logout and redirect to homepage
 router.get('/logout', (req, res) => {

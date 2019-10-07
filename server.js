@@ -31,6 +31,14 @@ var sess = {
   saveUninitialized: true
 };
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 // if app is in production stage, serve secure cookies
 if (app.get('env') === 'production'){
@@ -47,7 +55,8 @@ var strategy = new Auth0Strategy(
       process.env.AUTH0_CALLBACK_URL || 'http://localhost:5000/callback'
   },
   function (accessToken, refreshToken, extraParams, profile, done) {
-    console.log(accessToken);
+    // console.log("access: " + accessToken);
+    // console.log(extraParams);
     return done(null, profile);
   }
 );

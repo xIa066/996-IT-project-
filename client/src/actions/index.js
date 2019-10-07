@@ -1,4 +1,5 @@
 import artifacts from '../apis/artifacts';
+import login from '../apis/login';
 import history from '../history';
 import {
   FETCH_ARTIFACTS,
@@ -53,7 +54,11 @@ export const uploadImage = fileData => async dispatch => {
 }
 
 export const fetchUser = () => async dispatch =>{
-  const response = await artifacts.get("/user");
+  const response = await artifacts.get("/callback");
   console.log(response);
   dispatch({ type:FETCH_USER, payload: response.data });
+}
+
+export const fetchToken = () => async dispatch => {
+  const response = await login.post('/');
 }
