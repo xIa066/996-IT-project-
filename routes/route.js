@@ -1,6 +1,7 @@
 const express = require('express');
 const artifactControl = require('../controllers/artifactController.js');
 const awsControl = require('../controllers/awsController');
+const familyControl = require('../controllers/familyController');
 const router = express.Router();
 const mongoose = require('mongoose');
 
@@ -27,6 +28,12 @@ router.delete('/delete/:id', artifactControl.deleteArtifact);
 
 // update artifact
 router.put('/update/:id', artifactControl.updateArtifact);
+
+// Finding artifact by type (true or false)
+router.get('/type/:isItem', artifactControl.findAritfactByType); 
+
+// Creating a family
+router.post('/createFamily', familyControl.createFamily);
 
 // export the route in the server.js
 module.exports = router;

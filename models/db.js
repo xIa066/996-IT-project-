@@ -1,7 +1,7 @@
 // Create connection details for the database
 // master js
 const mongoose = require('mongoose');
-const dbURI = process.env.dbURI || "mongodb+srv://adminUser:team996@appcluster-owus8.mongodb.net/test?retryWrites=true&w=majority";
+const dbURI = process.env.dbURI || "mongodb+srv://guo:TEST@cluster0-cwhxw.mongodb.net/admin?retryWrites=true&w=majority";
 
 const options = {
     useNewUrlParser: true,
@@ -20,7 +20,5 @@ mongoose.set('useFindAndModify', false);
 
 // This is where you require shemma
 require('./artifact.js');
-require('./events.js');
 require('./family.js');
-require('./items.js');
 require('./users.js');

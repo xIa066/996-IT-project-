@@ -3,10 +3,11 @@
 var mongoose = require('mongoose');
 var artifactSchema = mongoose.Schema(
 	{
-		"name": String,
-		"date": String,
-		"photo": String,
-		"ownerID": String,
+		"name": { type:String, required:true },
+		"date": { type:String, required:true },
+		"photo": { type:String, required:true },
+		"ownerID": { type:String, required:true },
+		"isItem": { type:Boolean, required:true },
 		"description": String
 	},
 	{
