@@ -6,7 +6,7 @@ var familySchema = new mongoose.Schema(
 		"name": String,
 		// "familyCode": String,
 		"owner": String, // ownerID
-		"members": [String]
+		"members": [{"member": String}] //ownerID
 
 	}
 );
