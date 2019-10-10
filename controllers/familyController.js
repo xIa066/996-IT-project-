@@ -7,7 +7,7 @@ var createFamily = function(req, res){
         "name": req.body.name,
         "owner": req.body.owner,
         // "familyCode": tempCode,
-        "members": [req.body.owner]
+        "members": [{"member": req.body.owner}]
     });
     family.save(function(err, family){
         if(!err){
@@ -46,5 +46,21 @@ var findAllFamily = function(req,res){
     });
 };
 
+
+var addMember = function(req,res){
+    var family = req.body.familyCode;
+    var newMember = {"member": req.body.member};
+    Family.findByIdAndUpdate(family, {$push: {"members": newMember }}, function(err,family){
+        if(!err){
+            res.send(family);
+        }
+        else{
+            console.log(err);
+            }
+    });
+};
+
+
 module.exports.createFamily = createFamily;
 module.exports.findAllFamily = findAllFamily;
+module.exports.addMember = addMember;
