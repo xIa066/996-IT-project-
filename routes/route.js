@@ -35,5 +35,8 @@ router.get('/type/:isItem', artifactControl.findAritfactByType);
 // Creating a family
 router.post('/createFamily', familyControl.createFamily);
 
+// Adding a member to a family
+router.post('/addMember', familyControl.addMember);
+
 // export the route in the server.js
 module.exports = router;
