@@ -54,11 +54,11 @@ export const uploadImage = fileData => async dispatch => {
 }
 
 export const fetchUser = () => async dispatch =>{
-  const response = await artifacts.get("/callback");
+  const response = await artifacts.get("/login");
   console.log(response);
   dispatch({ type:FETCH_USER, payload: response.data });
 }
 
-export const fetchToken = () => async dispatch => {
-  const response = await login.post('/');
-}
+// export const fetchToken = () => async dispatch => {
+//   const response = await login.post('/');
+// }

@@ -11,6 +11,7 @@ import ArtifactsListPage from './pages/ArtifactsListPage';
 import ArtifactPage from './pages/ArtifactPage';
 import history from './history';
 import NewHome from './pages/NewHome';
+import HomePage from './pages/HomePage';
 import EditArtifactPage from './pages/EditArtifactPage';
 
 import './index.css'
@@ -21,7 +22,7 @@ class App extends React.Component {
      return(
       <Router history={history}>
         <div>
-          <Route path="/" exact component={NewHome} />
+          <Route path="/" exact component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/category" component={CategoryPage} />
           <Route path="/gallery" component={GalleryPage} />
