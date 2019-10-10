@@ -46,7 +46,7 @@ var findAllFamily = function(req,res){
     });
 };
 
-
+// adding a member
 var addMember = function(req,res){
     var family = req.body.familyCode;
     var newMember = {"member": req.body.member};
@@ -60,7 +60,22 @@ var addMember = function(req,res){
     });
 };
 
+// deleting a member
+var deleteMember = function(req,res){
+    var family = req.body.familyCode;
+    var newMember = {"member": req.body.member};
+    Family.findByIdAndUpdate(family, {$pull: {"members": newMember }}, function(err,family){
+        if(!err){
+            res.send(family);
+        }
+        else{
+            console.log(err);
+            }
+    });
+};
+
 
 module.exports.createFamily = createFamily;
 module.exports.findAllFamily = findAllFamily;
 module.exports.addMember = addMember;
+module.exports.deleteMember = deleteMember;

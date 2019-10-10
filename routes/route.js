@@ -38,5 +38,8 @@ router.post('/createFamily', familyControl.createFamily);
 // Adding a member to a family
 router.post('/addMember', familyControl.addMember);
 
+// Deleting a member from a family
+router.post('/deleteMember', familyControl.deleteMember);
+
 // export the route in the server.js
 module.exports = router;
