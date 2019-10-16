@@ -4,10 +4,11 @@ var mongoose = require('mongoose');
 var familySchema = new mongoose.Schema(
 	{
 		"name": String,
-		"familyCode": String,
-		"owner": Number, 
-		"members": [{"member": Number}]
+		"owner": String, 
+		"members": [{"memberID": String}]
 
+	},{
+		collection: "families"
 	}
 );
 

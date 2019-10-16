@@ -28,6 +28,20 @@ var findArtifactByOwner = function(req,res){
 };
 
 
+var findAritfactByType = function(req, res){
+    var _artifactType = req.params.artifactType;
+    Artifact.find({artifactType:_artifactType}, function(err,artifact){
+        if(!err && artifact[0] != null){
+            res.send(artifact);
+        }
+        else{
+            res.sendStatus(404);
+            console.log("404");
+        }
+    });
+}
+
+
 // find artifact by object id
 var findArtifactByObject = function (req, res){
     var obj = req.params.id;
@@ -42,12 +56,12 @@ var findArtifactByObject = function (req, res){
 
 // create a new artifact and store details
 var createArtifact = function(req, res){
-    console.log(req.body);
     var artifact = new Artifact({
         "name": req.body.name,
         "date": req.body.date,
         "photo": req.body.photo,
         "ownerID": req.body.ownerID,
+        "artifactType": req.body.artifactType,
         "description": req.body.description
     });
     artifact.save(function(err, artifact){
@@ -60,6 +74,7 @@ var createArtifact = function(req, res){
         }
     });
 };
+
 
 // Delete artifact by object id
 var deleteArtifact = function(req, res){
@@ -80,6 +95,7 @@ var updateArtifact = function(req, res){
         "date": req.body.date,
         "photo": req.body.photo,
         "ownerID": req.body.ownerID,
+        "artifactType": req.body.artifactType,
         "description": req.body.description
     }, function(err, artifact){
         if(!err){
@@ -95,5 +111,6 @@ module.exports.findAllArtifacts = findAllArtifacts;
 module.exports.createArtifact = createArtifact;
 module.exports.findArtifactByOwner = findArtifactByOwner;
 module.exports.findArtifactByObject = findArtifactByObject;
+module.exports.findAritfactByType = findAritfactByType;
 module.exports.deleteArtifact = deleteArtifact;
 module.exports.updateArtifact = updateArtifact;
