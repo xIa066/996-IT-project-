@@ -34,4 +34,4 @@ mongoose.set('useFindAndModify', false);
 // This is where you require shemma
 require('./artifact.js');
 require('./family.js');
-require('./users.js');
+require('./user.js');

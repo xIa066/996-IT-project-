@@ -2,6 +2,7 @@ const express = require('express');
 const artifactControl = require('../controllers/artifactController.js');
 const awsControl = require('../controllers/awsController');
 const familyControl = require('../controllers/familyController');
+const userControl = require('../controllers/userController');
 const router = express.Router();
 const mongoose = require('mongoose');
 
@@ -23,15 +24,6 @@ router.post('/createArtifact', artifactControl.createArtifact);
 // Upload an image
 router.post('/uploadImage', awsControl.uploadToBucket);
 
-// delete artifact by id
-router.delete('/delete/:id', artifactControl.deleteArtifact);
-
-// update artifact
-router.put('/update/:id', artifactControl.updateArtifact);
-
-// Finding artifact by type (true or false)
-router.get('/type/:isItem', artifactControl.findAritfactByType); 
-
 // Creating a family
 router.post('/createFamily', familyControl.createFamily);
 
@@ -40,6 +32,21 @@ router.post('/addMember', familyControl.addMember);
 
 // Deleting a member from a family
 router.post('/deleteMember', familyControl.deleteMember);
+
+// delete artifact by id
+router.delete('/delete/:id', artifactControl.deleteArtifact);
+
+// update artifact
+router.put('/update/:id', artifactControl.updateArtifact);
+
+// Finding artifact by type ('item' or 'event')
+router.get('/type/:isItem', artifactControl.findAritfactByType); 
+
+router.post('/createUser', userControl.createUser);
+
+router.post('/editProfile', userControl.editProfile);
+
+
 
 // export the route in the server.js
 module.exports = router;

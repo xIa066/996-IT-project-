@@ -1,7 +1,7 @@
 // Setup users schema
 
 var mongoose = require('mongoose');
-var usersSchema = new mongoose.Schema(
+var userSchema = new mongoose.Schema(
 	{
 		"name": { type:String, required: true },
 		"auth0_ID": { type:String, required: true },
@@ -12,6 +12,6 @@ var usersSchema = new mongoose.Schema(
 	}
 );
 
-const Users = mongoose.model('users', usersSchema);
+const User = mongoose.model('user', userSchema);
 
-module.exports = Users;
+module.exports = User;
