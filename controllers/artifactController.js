@@ -17,7 +17,12 @@ var findAllArtifacts = function(req,res){
 
 // find artifact by types
 var findAritfactByType = function(req, res){
-    var _isItem = req.params.isItem;
+    var type = req.params.type;
+    if(type == "item"){
+        var _isItem = true;
+    }else{
+        var _isItem = false;
+    }
     Artifact.find({isItem:_isItem}, function(err,artifact){
         if(!err && artifact[0] != null){
             res.send(artifact);
@@ -90,7 +95,7 @@ var deleteArtifact = function(req, res){
     });
 }
 
-
+// Updating Artifact
 var updateArtifact = function(req, res){
     Artifact.findByIdAndUpdate(req.params.id, {
         "name": req.body.name,
