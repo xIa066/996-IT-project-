@@ -2,6 +2,7 @@ const express = require('express');
 const artifactControl = require('../controllers/artifactController.js');
 const awsControl = require('../controllers/awsController');
 const familyControl = require('../controllers/familyController');
+const userControl = require('../controllers/userController');
 
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -43,6 +44,8 @@ router.post('/uploadImage', awsControl.uploadToBucket);
 // Create a family
 router.post('/createFamily', familyControl.createFamily);
 
+// Create a user
+router.post('/createUser', userControl.createUser);
 
 /********************************
  *  DELETE METHODS
@@ -64,6 +67,9 @@ router.put('/update/:id', artifactControl.updateArtifact);
 
 // add a new family member
 router.put('/addMember', familyControl.addMember);
+
+// update user info
+router.put('/updateUser', userControl.updateUser);
 
 // export the route in the server.js
 module.exports = router;

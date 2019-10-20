@@ -1,17 +1,21 @@
 // Setup users schema
 
 var mongoose = require('mongoose');
-var usersSchema = new mongoose.Schema(
+var userSchema = new mongoose.Schema(
 	{
 		"name": String,
-		"userID": Number,
+		"userID": String,
 		"email": String, 
-		"birth": Date,
-		"bio": {type: String, required: false},
-		"photo": {type: String, required: false} // optional
+		"dob": { type: String, required: false },
+		"bio": { type: String, required: false },
+		"photo": { type: String, required: false },
+		"families": [{ "familyName": String }]
+	},
+	{
+		collection: "users"
 	}
 );
 
-const Users = mongoose.model('users', usersSchema);
+const User = mongoose.model('user', userSchema);
 
-module.exports = Users;
+module.exports = User;

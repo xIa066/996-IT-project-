@@ -32,6 +32,15 @@ class CreateArtifact extends React.Component {
     );
   }
 
+  renderRadioInput = ({ input, name, meta, label }) => {
+    return(
+      <div className="form-check form-check-inline">
+        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" {...input} />
+        <label className="form-check-label" for="inlineRadio1">{label}</label>
+      </div>
+    );
+  }
+
   handleImageInput = functionType => e => {
     functionType(e.target.files[0]);
   }
@@ -80,6 +89,13 @@ class CreateArtifact extends React.Component {
         <Field name="ownerID" component={this.renderInput} label="Enter User ID" placeholder="00000" id="inputID" />
         <Field name="description" component={this.renderInput} label="Enter Description" placeholder="Description..." id="inputDesc" />
         <Field name="photo" component={this.renderImageInput} label="Enter Photo URL" placeholder="Photo URL" id="inputPhoto" /><br/>
+        <div>
+          <label>Artifact Type: </label>
+          <div>
+            <Field name="artifactType" component={this.renderRadioInput} type="radio" value="tradition" label="Tradition"/>
+            <Field name="artifactType" component={this.renderRadioInput} type="radio" value="item" label="Item"/>
+          </div>
+        </div>
         <input className="btn btn-secondary" type="submit" value="Submit" />
       </form>
     );

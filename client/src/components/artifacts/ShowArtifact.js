@@ -23,9 +23,9 @@ class ShowArtifact extends React.Component{
                     </div>
                     <div className="row">
                         <Link to={`/artifacts/edit/${this.props.match.params.id}`}>
-                            <button type="button" class="btn btn-secondary mx-1">Edit</button>
+                            <button type="button" className="btn btn-secondary mx-1">Edit</button>
                         </Link>
-                        <button type="button" class="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.match.params.id)}}>Delete</button>
+                        <button type="button" className="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.match.params.id)}}>Delete</button>
                     </div>
                 </div>
             </div>

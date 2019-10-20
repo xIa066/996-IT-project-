@@ -13,8 +13,9 @@ class RecentArtifacts extends React.Component{
 
     componentDidMount(){
         this.props.fetchArtifacts();
-        this.props.fetchUser();
+        console.log(this.props.user);
     }
+
 
     renderList = (recentList) => {
         return recentList.map(artifact =>{

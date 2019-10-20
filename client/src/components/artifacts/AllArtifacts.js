@@ -24,7 +24,8 @@ class AllArtifacts extends React.Component{
     }
 
     render(){
-        if(this.props.artifacts){
+        if(this.props.artifacts.length > 0){
+            
             return(
                 <div id="body" className="all-artifacts">
                     <h1><span>gallery</span></h1>

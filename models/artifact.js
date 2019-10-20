@@ -8,7 +8,8 @@ var artifactSchema = mongoose.Schema(
 		"photo": { type:String, required:true },
 		"ownerID": { type:String, required:true },
 		"artifactType": { type:String, required:true },
-		"description": String
+		"description": String,
+		"family": { type: String, default: 'none'}
 	},
 	{
 		collection: "artifacts"

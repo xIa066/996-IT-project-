@@ -6,7 +6,7 @@ import AllArtifacts from '../components/artifacts/AllArtifacts';
 import { useAuth0 } from "../login/authWrapper";
 
 const HomePage = () => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
     return(
       <div>
         <Navbar />
@@ -14,9 +14,9 @@ const HomePage = () => {
           <CarouselImages />
         )}
 
-        {isAuthenticated && (
+        {isAuthenticated &&  user && (
           <>
-          <RecentArtifacts />
+          <RecentArtifacts user={user}/>
           <AllArtifacts />
           </>
         )}
