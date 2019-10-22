@@ -54,6 +54,19 @@ var findArtifactByObject = function (req, res){
     });
 };
 
+// find all artifacts belonging to a family group
+var findFamilyArtifacts = function(req, res){
+    var familyName = req.body.familyName;
+    Artifact.find({ family: familyName }, function(err, artifact){
+        if(!err){
+            res.send(artifact);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+
 // create a new artifact and store details
 var createArtifact = function(req, res){
     var artifact = new Artifact({
@@ -62,7 +75,8 @@ var createArtifact = function(req, res){
         "photo": req.body.photo,
         "ownerID": req.body.ownerID,
         "artifactType": req.body.artifactType,
-        "description": req.body.description
+        "description": req.body.description,
+        "family": req.body.family
     });
     artifact.save(function(err, artifact){
         if(!err){
@@ -114,3 +128,4 @@ module.exports.findArtifactByObject = findArtifactByObject;
 module.exports.findAritfactByType = findAritfactByType;
 module.exports.deleteArtifact = deleteArtifact;
 module.exports.updateArtifact = updateArtifact;
+module.exports.findFamilyArtifacts = findFamilyArtifacts;

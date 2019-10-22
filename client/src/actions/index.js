@@ -1,5 +1,4 @@
 import artifacts from '../apis/artifacts';
-import login from '../apis/login';
 import history from '../history';
 import {
   FETCH_ARTIFACTS,
@@ -9,6 +8,7 @@ import {
   FETCH_ARTIFACT,
   UPLOAD_IMAGE,
   FETCH_USER,
+  CREATE_USER,
 } from './types';
 
 export const fetchArtifacts = () => async dispatch => {
@@ -53,12 +53,13 @@ export const uploadImage = fileData => async dispatch => {
   dispatch({ type: UPLOAD_IMAGE, payload: response.data });
 }
 
-export const fetchUser = () => async dispatch =>{
-  const response = await artifacts.get("/login");
-  console.log(response);
-  dispatch({ type:FETCH_USER, payload: response.data });
+export const getUser = authUser => async dispatch =>{
+  const form = { 'name': authUser.nickname, "userID": authUser.sub, 'email': authUser.email }
+  const user = await artifacts.get(`/getUser/${authUser.sub}`);
+  if(!user.data){
+    const response = await artifacts.post('/createUser', form)
+    dispatch({ type: CREATE_USER, payload: response.data });
+  }else{
+    dispatch({ type: FETCH_USER, payload: user.data});
+  }
 }
-
-// export const fetchToken = () => async dispatch => {
-//   const response = await login.post('/');
-// }

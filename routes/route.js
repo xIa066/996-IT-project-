@@ -5,8 +5,6 @@ const familyControl = require('../controllers/familyController');
 const userControl = require('../controllers/userController');
 
 const router = express.Router();
-const mongoose = require('mongoose');
-
 
 /********************************
  *  GET METHODS
@@ -24,12 +22,17 @@ router.get('/getArtifacts/:ownerID', artifactControl.findArtifactByOwner);
 // Finding artifact by object id
 router.get('/getArtifact/:id', artifactControl.findArtifactByObject);
 
-// Find artifact by type
-router.get('/getArtifact/:type', artifactControl.findAritfactByType);
+// Find artifacts by type
+router.get('/getArtifactsByType/:type', artifactControl.findAritfactByType);
 
 // Finding all families
 router.get('/families', familyControl.findAllFamilies);
 
+// Finding artifacts by family
+router.get('/getArtifactsByFamily', artifactControl.findFamilyArtifacts);
+
+// Find user by auth0ID
+router.get('/getUser/:id', userControl.getUser);
 
 /********************************
  *  POST METHODS
@@ -57,6 +60,8 @@ router.delete('/delete/:id', artifactControl.deleteArtifact);
 // delete member
 router.delete('/deleteMember', familyControl.deleteMember);
 
+// remove family from user profile
+router.delete('/removeFamily',  userControl.removeFamily);
 
 /********************************
  *  PUT METHODS
@@ -70,6 +75,10 @@ router.put('/addMember', familyControl.addMember);
 
 // update user info
 router.put('/updateUser', userControl.updateUser);
+
+// update user profile to contain a new family
+router.put('/addFamily', userControl.addFamily);
+
 
 // export the route in the server.js
 module.exports = router;
