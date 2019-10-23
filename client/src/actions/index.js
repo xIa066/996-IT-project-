@@ -60,6 +60,8 @@ export const getUser = authUser => async dispatch =>{
     const response = await artifacts.post('/createUser', form)
     dispatch({ type: CREATE_USER, payload: response.data });
   }else{
+    console.log("user yes");
+    console.log(user.data);
     dispatch({ type: FETCH_USER, payload: user.data});
   }
 }

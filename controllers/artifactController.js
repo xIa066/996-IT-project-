@@ -28,7 +28,7 @@ var findArtifactByOwner = function(req,res){
 };
 
 
-var findAritfactByType = function(req, res){
+var findArtifactByType = function(req, res){
     var _artifactType = req.params.artifactType;
     Artifact.find({artifactType:_artifactType}, function(err,artifact){
         if(!err && artifact[0] != null){
@@ -56,7 +56,7 @@ var findArtifactByObject = function (req, res){
 
 // find all artifacts belonging to a family group
 var findFamilyArtifacts = function(req, res){
-    var familyName = req.body.familyName;
+    var familyName = req.params.familyName;
     Artifact.find({ family: familyName }, function(err, artifact){
         if(!err){
             res.send(artifact);
@@ -125,7 +125,7 @@ module.exports.findAllArtifacts = findAllArtifacts;
 module.exports.createArtifact = createArtifact;
 module.exports.findArtifactByOwner = findArtifactByOwner;
 module.exports.findArtifactByObject = findArtifactByObject;
-module.exports.findAritfactByType = findAritfactByType;
+module.exports.findArtifactByType = findArtifactByType;
 module.exports.deleteArtifact = deleteArtifact;
 module.exports.updateArtifact = updateArtifact;
 module.exports.findFamilyArtifacts = findFamilyArtifacts;

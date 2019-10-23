@@ -14,7 +14,6 @@ class RecentArtifacts extends React.Component{
     componentDidMount(){
         this.props.fetchArtifacts();
         this.props.getUser(this.props.user);
-        console.log(this.props.user);
     }
 
 

@@ -36,9 +36,9 @@ var findAllFamilies = function(req,res){
 
 // adding a member
 var addMember = function(req,res){
-    var familyID = req.body.familyID;
-    var newMember = {"memberID": req.body.member};
-    Family.findByIdAndUpdate(familyID, {$push: {"members":newMember }}, {safe: true, upsert: true}, function(err,family){
+    var familyID = req.params.familyID;
+    var newMember = {"memberID": req.body.member, "alias": req.body.alias};
+    Family.findByIdAndUpdate(familyID, {$push: { "members":newMember }}, {safe: true, upsert: true}, function(err,family){
         if(!err){
             res.send(family);
         }
@@ -50,8 +50,8 @@ var addMember = function(req,res){
 
 // deleting a member
 var deleteMember = function(req,res){
-    var familyID = req.body.familyID;
-    var member = {"memberID": req.body.member};
+    var familyID = req.params.familyID;
+    var member = {"memberID": req.body.member, "alias": req.body.alias};
     Family.findByIdAndUpdate(familyID, {$pull: {"members": member}}, function(err,family){
         if(!err){
             res.send(family);

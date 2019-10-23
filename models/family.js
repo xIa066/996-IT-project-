@@ -5,7 +5,7 @@ var familySchema = new mongoose.Schema(
 	{
 		"name": String,
 		"owner": String, 
-		"members": [{"memberID": String}]
+		"members": [{ "memberID": String, "alias": String }]
 
 	},{
 		collection: "families"

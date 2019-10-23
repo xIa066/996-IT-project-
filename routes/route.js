@@ -23,7 +23,7 @@ router.get('/getArtifacts/:ownerID', artifactControl.findArtifactByOwner);
 router.get('/getArtifact/:id', artifactControl.findArtifactByObject);
 
 // Find artifacts by type
-router.get('/getArtifactsByType/:type', artifactControl.findAritfactByType);
+router.get('/getArtifactsByType/:type', artifactControl.findArtifactByType);
 
 // Finding all families
 router.get('/families', familyControl.findAllFamilies);
@@ -58,7 +58,7 @@ router.post('/createUser', userControl.createUser);
 router.delete('/delete/:id', artifactControl.deleteArtifact);
 
 // delete member
-router.delete('/deleteMember', familyControl.deleteMember);
+router.delete('/deleteMember/:familyID', familyControl.deleteMember);
 
 // remove family from user profile
 router.delete('/removeFamily',  userControl.removeFamily);
@@ -71,7 +71,7 @@ router.delete('/removeFamily',  userControl.removeFamily);
 router.put('/update/:id', artifactControl.updateArtifact);
 
 // add a new family member
-router.put('/addMember', familyControl.addMember);
+router.put('/addMember/:familyID', familyControl.addMember);
 
 // update user info
 router.put('/updateUser', userControl.updateUser);
