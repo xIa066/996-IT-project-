@@ -54,7 +54,7 @@ var updateUserPicture = function (req, res){
 
 // adding a family
 var addFamily = function (req, res){
-    var userID = req.body.userID;
+    var userID = req.params.userID;
     var newFamily = { "familyName": req.body.familyName };
     User.findOneAndUpdate({userID: userID}, {$push: { "families": newFamily }}, {safe: true, upsert: true}, function(err, user){
         if(!err){
@@ -68,7 +68,7 @@ var addFamily = function (req, res){
 
 // remove family from 
 var removeFamily = function (req, res){
-    var userID = req.body.userID;
+    var userID = req.params.userID;
     var newFamily = { "familyName": req.body.familyName };
     User.findOneAndUpdate({userID: userID}, {$pull: { "families": newFamily }}, function(err, user){
         if(!err){

@@ -7,7 +7,7 @@ var createFamily = function(req, res){
     var family = new Family({
         "name": req.body.name,
         "owner": req.body.owner,
-        "members": [{"memberID": req.body.owner}]
+        "members": [{ "memberID": req.body.owner, "alias": req.body.alias }]
     });
     family.save(function(err, family){
         if(!err){

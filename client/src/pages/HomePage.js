@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from '../components/navigation/Navbar';
 import CarouselImages from '../components/homepage/CarouselImages';
 import RecentArtifacts from '../components/artifacts/RecentArtifacts';
 import AllArtifacts from '../components/artifacts/AllArtifacts';
 import { useAuth0 } from "../login/authWrapper";
+
+import '../styles/Homepage.css';
 
 const HomePage = () => {
   const { isAuthenticated, user } = useAuth0();
@@ -16,7 +18,7 @@ const HomePage = () => {
 
         {isAuthenticated &&  user && (
           <>
-          <RecentArtifacts user={user}/>
+          <RecentArtifacts authUser={user}/>
           <AllArtifacts />
           </>
         )}

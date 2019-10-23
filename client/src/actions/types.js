@@ -7,3 +7,10 @@ export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 export const FETCH_USER = 'FETCH_USER';
 export const CREATE_USER = 'CREATE_USER';
 export const CREATE_FAMILY = 'CREATE_FAMILY';
+export const CREATE_FAMILY_FAIL = 'CREATE_FAMILY_FAIL';
+export const GET_FAMILIES_OWNED = 'GET_FAMILIES_OWNED';
+export const GET_FAMILY = 'GET_FAMILY';
+export const GET_FAMILY_FAIL = 'GET_FAMILY_FAIL'
+export const DELETE_MEMBER = 'DELETE_MEMBER';
+export const ADD_MEMBER = 'ADD_MEMBER';
+

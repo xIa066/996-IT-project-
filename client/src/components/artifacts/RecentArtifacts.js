@@ -13,7 +13,7 @@ class RecentArtifacts extends React.Component{
 
     componentDidMount(){
         this.props.fetchArtifacts();
-        this.props.getUser(this.props.user);
+        this.props.getUser(this.props.authUser);
     }
 
 
@@ -60,7 +60,8 @@ class RecentArtifacts extends React.Component{
 }
 
 const mapStateToProps = state => {
-    return { artifacts: Object.values(state.artifacts) };
+    console.log(state.user);
+    return { artifacts: Object.values(state.artifacts), user: state.user };
 }
 
 export default connect(mapStateToProps, { fetchArtifacts, getUser })(RecentArtifacts);

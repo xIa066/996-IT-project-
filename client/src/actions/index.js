@@ -9,6 +9,7 @@ import {
   UPLOAD_IMAGE,
   FETCH_USER,
   CREATE_USER,
+  GET_FAMILIES_OWNED,
 } from './types';
 
 export const fetchArtifacts = () => async dispatch => {
@@ -53,7 +54,7 @@ export const uploadImage = fileData => async dispatch => {
   dispatch({ type: UPLOAD_IMAGE, payload: response.data });
 }
 
-export const getUser = authUser => async dispatch =>{
+export const getUser = authUser => async dispatch => {
   const form = { 'name': authUser.nickname, "userID": authUser.sub, 'email': authUser.email }
   const user = await backend.get(`/getUser/${authUser.sub}`);
   //if user isn't in database
@@ -62,11 +63,11 @@ export const getUser = authUser => async dispatch =>{
     console.log(response.data);
     dispatch({ type: CREATE_USER, payload: response.data });
   }else{
-<<<<<<< HEAD
-    console.log("user yes");
-=======
->>>>>>> e68bb42fd2483eaa7b6eea5761c6c0ee94102002
-    console.log(user.data);
     dispatch({ type: FETCH_USER, payload: user.data});
   }
+}
+
+export const getOwnedFamilies = authUser => async dispatch => {
+  const response = await backend.get(`/getFamiliesByOwner/${authUser.sub}`);
+  dispatch({ type: GET_FAMILIES_OWNED, payload: response.data });
 }

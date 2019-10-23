@@ -67,7 +67,7 @@ router.delete('/delete/:id', artifactControl.deleteArtifact);
 router.delete('/deleteMember/:familyID', familyControl.deleteMember);
 
 // remove family from user profile
-router.delete('/removeFamily',  userControl.removeFamily);
+router.delete('/removeFamily/:userID',  userControl.removeFamily);
 
 /********************************
  *  PUT METHODS
@@ -83,7 +83,7 @@ router.put('/addMember/:familyID', familyControl.addMember);
 router.put('/updateUser', userControl.updateUser);
 
 // update user profile to contain a new family
-router.put('/addFamily', userControl.addFamily);
+router.put('/addFamily/:userID', userControl.addFamily);
 
 
 // export the route in the server.js
