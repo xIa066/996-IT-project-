@@ -21,6 +21,32 @@ var createFamily = function(req, res){
 };
 
 
+//find all families belonging to a specfic owner
+var findFamiliesByOwner = function(req, res){
+    var owner = req.params.ownerID;
+    Family.find({owner:owner}, function(err, family){
+        if(!err){
+            res.send(family);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+
+// find family by name
+var findFamilyByName = function(req, res){
+    var name = req.params.name;
+    Family.findOne({name:name}, function(err, fmaily){
+        if(!err){
+            res.send(family);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+
 // finding all families
 var findAllFamilies = function(req,res){
     Family.find(function(err,family){
@@ -67,3 +93,5 @@ module.exports.createFamily = createFamily;
 module.exports.findAllFamilies = findAllFamilies;
 module.exports.addMember = addMember;
 module.exports.deleteMember = deleteMember;
+module.exports.findFamiliesByOwner = findFamiliesByOwner;
+module.exports.findFamilyByName = findFamilyByName;

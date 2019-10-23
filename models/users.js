@@ -6,9 +6,9 @@ var userSchema = new mongoose.Schema(
 		"name": String,
 		"userID": String,
 		"email": String, 
-		"dob": { type: String, required: false },
-		"bio": { type: String, required: false },
-		"photo": { type: String, required: false },
+		"dob": { type: String, default: null },
+		"bio": { type: String, default: null },
+		"photo": { type: String, default: null },
 		"families": [{ "familyName": String }]
 	},
 	{

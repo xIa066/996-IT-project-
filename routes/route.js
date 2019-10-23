@@ -34,6 +34,12 @@ router.get('/getArtifactsByFamily', artifactControl.findFamilyArtifacts);
 // Find user by auth0ID
 router.get('/getUser/:id', userControl.getUser);
 
+// find all of a users owned families
+router.get('/getFamiliesByOwner/:ownerID', familyControl.findFamiliesByOwner);
+
+// find family by name
+router.get('/getFamilyByName/:name', familyControl.findFamilyByName);
+
 /********************************
  *  POST METHODS
  ********************************/
