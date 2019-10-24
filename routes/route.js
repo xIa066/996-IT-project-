@@ -51,7 +51,7 @@ router.post('/createArtifact', artifactControl.createArtifact);
 router.post('/uploadImage', awsControl.uploadToBucket);
 
 // Create a family
-router.post('/createFamily', familyControl.createFamily);
+router.post('/createFamily/:owner/:alias', familyControl.createFamily);
 
 // Create a user
 router.post('/createUser', userControl.createUser);

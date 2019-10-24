@@ -6,23 +6,23 @@ import Loading from '../components/misc/Loading';
 import AllFamilies from '../components/families/AllFamilies';
 import OwnedFamilies from '../components/families/OwnedFamilies';
 
-const MyFamiliesPage = () => {
+const CreateFamilyPage = () => {
     const { user } = useAuth0();
-      return(
-        <div>
-          <Navbar />
-          {!user && (
-            <Loading />
-          )}
+    return(
+      <div>
+        <Navbar />
+        {!user && (
+          <Loading />
+        )}
   
-          {user && (
-            <>
-            <AllFamilies authUser={user} />
-            <OwnedFamilies authUser={user} />
-            </>
-          )}
-        </div>
-      );
-  }
-  
-  export default MyFamiliesPage;
+        {user && (
+          <>
+          <AllFamilies authUser={user} />
+          <OwnedFamilies authUser={user} />
+          </>
+        )}
+      </div>
+    );
+}
+ 
+export default CreateFamilyPage;

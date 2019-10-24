@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import { getOwnedFamilies } from '../../actions';
 
-class OwnedFamilies extends React.Component{
+class OwnedFamilies extends React.Component {
+
     componentDidMount(){
         this.props.getOwnedFamilies(this.props.authUser);
     }
@@ -15,7 +16,7 @@ class OwnedFamilies extends React.Component{
             );
         }else if(this.props.family.ownedFamilies.length === 0){
             return(
-                <div className="container">You don't own families... want to create one?</div>
+                <div className="container"><Link to="/create-family" className="text-dark">You don't own families... want to create one?</Link></div>
             );
         }else{
             return <div className="container">Oh you got some families you own</div>;
@@ -25,6 +26,6 @@ class OwnedFamilies extends React.Component{
 
 const mapStateToProps = state => {
     return { family: state.family };
-}
+};
 
 export default connect(mapStateToProps, { getOwnedFamilies })(OwnedFamilies);

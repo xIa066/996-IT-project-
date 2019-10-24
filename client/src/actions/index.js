@@ -10,6 +10,7 @@ import {
   FETCH_USER,
   CREATE_USER,
   GET_FAMILIES_OWNED,
+  CREATE_FAMILY,
 } from './types';
 
 export const fetchArtifacts = () => async dispatch => {
@@ -70,4 +71,11 @@ export const getUser = authUser => async dispatch => {
 export const getOwnedFamilies = authUser => async dispatch => {
   const response = await backend.get(`/getFamiliesByOwner/${authUser.sub}`);
   dispatch({ type: GET_FAMILIES_OWNED, payload: response.data });
+}
+
+
+export const createFamily = (authUser, formValues) => async dispatch => {
+  const response = await backend.post(`/createFamily/${authUser.sub}/${authUser.nickname}`, formValues);
+  console.log(response.data);
+  dispatch({ type: CREATE_FAMILY, payload: response.data });
 }
