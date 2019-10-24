@@ -11,7 +11,8 @@ import EditArtifactPage from './pages/EditArtifactPage';
 import MyFamiliesPage from './pages/MyFamiliesPage';
 import CreateFamilyPage from './pages/CreateFamilyPage';
 
-import './index.css'
+// import './index.css';
+import './styles/style.css';
 
 
 class App extends React.Component {

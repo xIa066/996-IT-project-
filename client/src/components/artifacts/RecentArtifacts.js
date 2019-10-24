@@ -22,7 +22,7 @@ class RecentArtifacts extends React.Component{
             return(
                 <Link to={`/artifacts/view/${artifact._id}`} key={artifact._id}>
                     <div className="item">
-                        <img src={artifact.photo} alt=""/>
+                        <img src={artifact.photo} alt="" className="artifact__item-image"/>
                         {artifact.name}
                     </div>
                 </Link>
@@ -37,13 +37,13 @@ class RecentArtifacts extends React.Component{
         }else{
             var recentList;
             if(this.props.artifacts.length > 6){
-                recentList = this.props.artifacts.slice(0, 6);
+                recentList = this.props.artifacts.slice(this.props.artifacts.length-6, this.props.artifacts.length);
             }else{
                 recentList = this.props.artifacts;
             }
             return(
                 <div id="projects" className="recent-projects">
-                    <span data-text="Recent Project" className="dashed-shadow hello">Recent Project</span>
+                    <h1 className="recent_artifact_banner">Recent Artifacts</h1>
                     <br/>
                     <OwlCarousel
                         loop

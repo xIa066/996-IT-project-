@@ -7,7 +7,7 @@ class EditArtifactPage extends React.Component{
         return(
             <div>
                 <Navbar />
-                <div className="container">
+                <div className="container-fluid">
                     <EditArtifact match={this.props.match} />
                 </div>
             </div>

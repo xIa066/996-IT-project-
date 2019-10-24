@@ -18,10 +18,10 @@ class CreateArtifact extends React.Component {
   renderInput = ({ input, label, placeholder, id, meta }) => {
     return(
       <div className="form-group">
-        <label>{label}</label>
+        <label className="form__label" id={id}>{label}</label>
         <input
           type="text"
-          className="form-control"
+          className="form-control form__input"
           id={id}
           placeholder={placeholder}
           {...input}
@@ -34,9 +34,9 @@ class CreateArtifact extends React.Component {
 
   renderRadioInput = ({ input, name, meta, label }) => {
     return(
-      <div className="form-check form-check-inline">
-        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" {...input} />
-        <label className="form-check-label" for="inlineRadio1">{label}</label>
+      <div className="form-check form-check-inline form__radio-group">
+        <input className="form-check-input form__radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" {...input} />
+        <label className="form-check-label form__radio-label" for="inlineRadio1">{label}</label>
       </div>
     );
   }
@@ -78,26 +78,38 @@ class CreateArtifact extends React.Component {
     await this.props.uploadImage(fileData);
     console.log(this.props.upload);
     formValues.photo = this.props.upload.url;
-    this.props.createArtifact(formValues);
+    this.props.createArtifact(this.props.authUser, formValues);
   }
 
   render(){
     return(
-      <form className="needs-validation" onSubmit={this.props.handleSubmit(this.onSubmit)} noValidate>
-        <Field name="name" component={this.renderInput} label="Enter Name" placeholder="Title..." id="inputTitle" />
-        <Field name="date" component={this.renderInput} label="Enter Date" placeholder="DD/MM/YYYY" id="inputDate" />
-        <Field name="ownerID" component={this.renderInput} label="Enter User ID" placeholder="00000" id="inputID" />
-        <Field name="description" component={this.renderInput} label="Enter Description" placeholder="Description..." id="inputDesc" />
-        <Field name="photo" component={this.renderImageInput} label="Enter Photo URL" placeholder="Photo URL" id="inputPhoto" /><br/>
-        <div>
-          <label>Artifact Type: </label>
-          <div>
-            <Field name="artifactType" component={this.renderRadioInput} type="radio" value="tradition" label="Tradition"/>
-            <Field name="artifactType" component={this.renderRadioInput} type="radio" value="item" label="Item"/>
+      <section className="section-create">
+        <div className="row">
+          <div className="create">
+            <div className="create-form">
+              <form className="needs-validation form" onSubmit={this.props.handleSubmit(this.onSubmit)} noValidate>
+                <div className="u-center-text u-margin-bottom-big">
+                  <h2 class="heading-secondary">Create an Artifact!</h2>
+                </div>
+                <div className="form__group">
+                  <Field name="name" component={this.renderInput} label="Enter Name" placeholder="Title..." id="inputTitle" />
+                  <Field name="date" component={this.renderInput} label="Enter Date" placeholder="DD/MM/YYYY" id="inputDate" />
+                  <Field name="description" component={this.renderInput} label="Enter Description" placeholder="Description..." id="inputDesc" />
+                  <Field name="photo" component={this.renderImageInput} label="Enter Photo URL" placeholder="Photo URL" id="inputPhoto" /><br/>
+                  <div>
+                    <label className="form__label">Artifact Type: </label>
+                    <div className="form__radio">
+                      <Field name="artifactType" component={this.renderRadioInput} type="radio" value="tradition" label="Tradition"/>
+                      <Field name="artifactType" component={this.renderRadioInput} type="radio" value="item" label="Item"/>
+                    </div>
+                  </div>
+                  <input className="btn btn-submit" type="submit" value="Submit" />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-        <input className="btn btn-secondary" type="submit" value="Submit" />
-      </form>
+      </section>
     );
   }
 }

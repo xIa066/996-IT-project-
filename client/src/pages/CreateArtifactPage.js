@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import Navbar from  '../components/navigation/Navbar';
 import CreateArtifact from '../components/artifacts/CreateArtifact';
+import { useAuth0 } from "../login/authWrapper";
 
-class CreateArtifactPage extends Component {
-  render(){
+import Loading from '../components/misc/Loading';
+
+const CreateArtifactPage = () => {
+  const{ user } = useAuth0(); 
     return(
       <div>
         <div>
           <Navbar />
         </div>
-        <div className="container-fluid">
-          <CreateArtifact />
-        </div>
+        {!user && (<Loading />)}
+
+        {user && (
+          <div className="container-fluid">
+            <CreateArtifact authUser={user} />
+          </div>
+        )}
       </div>
     );
-  }
+
 }
 
 export default CreateArtifactPage;

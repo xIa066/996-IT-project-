@@ -19,8 +19,8 @@ export const fetchArtifacts = () => async dispatch => {
   dispatch({ type: FETCH_ARTIFACTS, payload: response.data });
 };
 
-export const createArtifact = formValues => async dispatch => {
-  const response = await backend.post('/createArtifact', formValues);
+export const createArtifact = (authUser, formValues) => async dispatch => {
+  const response = await backend.post(`/createArtifact/${authUser.sub}`, formValues);
 
   dispatch({ type: CREATE_ARTIFACT, payload: response.data});
   history.push('/');

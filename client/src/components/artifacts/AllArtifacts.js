@@ -12,26 +12,24 @@ class AllArtifacts extends React.Component{
     renderGallery(){
         return this.props.artifacts.map(artifact => {
             return(
-                <React.Fragment key={artifact._id}>
-                    <li>
-                        <Link to={`/artifacts/view/${artifact._id}`}>
-                            <img src={artifact.photo} alt="" />
-                        </Link>
-                    </li>
-                </React.Fragment>
+                <div className="artifact" key={artifact._id}>
+                    <Link to={`/artifacts/view/${artifact._id}`}>
+                        <img src={artifact.photo} alt="" className="artifact__img"/><br/>
+                    </Link>
+                    <h5 className="artifact__name">{artifact.name}</h5>
+                </div>
             );
         })
     }
 
     render(){
         if(this.props.artifacts.length > 0){
-            
             return(
                 <div id="body" className="all-artifacts">
-                    <h1><span>gallery</span></h1>
-                    <ul className="product">
+                    <h1 className="gallery-banner"><span>gallery</span></h1>
+                    <section className="product">
                         {this.renderGallery()}
-                    </ul>
+                    </section>
                 </div>
             );
         }else{

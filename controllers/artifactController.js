@@ -73,7 +73,7 @@ var createArtifact = function(req, res){
         "name": req.body.name,
         "date": req.body.date,
         "photo": req.body.photo,
-        "ownerID": req.body.ownerID,
+        "ownerID": req.params.ownerID,
         "artifactType": req.body.artifactType,
         "description": req.body.description,
         "family": req.body.family

@@ -45,7 +45,7 @@ router.get('/getFamilyByName/:name', familyControl.findFamilyByName);
  ********************************/
 
 // Creating an artifact
-router.post('/createArtifact', artifactControl.createArtifact);
+router.post('/createArtifact/:ownerID', artifactControl.createArtifact);
 
 // Upload an image
 router.post('/uploadImage', awsControl.uploadToBucket);

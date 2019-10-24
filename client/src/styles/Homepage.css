@@ -366,7 +366,7 @@ Responsive styles
         text-align:center;
     }
     .navbar-toggle i {
-        color:rgb(153,160,162);
+        color:#272727;
     }
     .navbar-toggle {
         margin-top:14px;
@@ -393,21 +393,8 @@ Image
     padding: 0 0 30px;
     text-align: center;
 }
-#body h1 {
-    color: #fff;
-    display: inline;
-    font-family: poller_oneregular;
-    font-size: 35px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-}
-#body h1 span {
-    background: #252525;
-    display: inline-block;
-    padding: 15px 28px 12px;
-}
+
+
 
 
 #body > ul {

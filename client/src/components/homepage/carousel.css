@@ -4,8 +4,9 @@
 
 .carousel-control>img {
     position:absolute;
-    top:42%;
+    top:70%;
     width:30%;
+    
 }
 
 .left.carousel-control>img {
