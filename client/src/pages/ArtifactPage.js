@@ -8,7 +8,7 @@ class ArtifactPage extends Component {
         return(
             <div>
                 <Navbar/>
-                <ShowArtifact match={this.props.match} />
+                <ShowArtifact id={this.props.id} />
             </div>
             
         );

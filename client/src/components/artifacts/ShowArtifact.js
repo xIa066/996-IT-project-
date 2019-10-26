@@ -5,17 +5,17 @@ import { fetchArtifact, deleteArtifact } from '../../actions';
 
 class ShowArtifact extends React.Component{
     componentDidMount() {
-        this.props.fetchArtifact(this.props.match.params.id);
+        this.props.fetchArtifact(this.props.id);
     }
     
     renderButtons(){
         // if(this.props.authUser.sub === this.props.artifact[0].ownerID){
         //     return(
         //         <>
-        //             <Link to={`/artifacts/edit/${this.props.match.params.id}`}>
+        //             <Link to={`/artifacts/edit/${this.props.id}`}>
         //                 <button type="button" className="btn btn-secondary mx-1">Edit</button>
         //             </Link>
-        //             <button type="button" className="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.match.params.id)}}>Delete</button>
+        //             <button type="button" className="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.id)}}>Delete</button>
         //         </>
         //     );       
         // }else{
@@ -37,10 +37,10 @@ class ShowArtifact extends React.Component{
                         <h3>{this.props.artifact[0].description}</h3>
                     </div>
                     <div className="row">
-                        <Link to={`/artifacts/edit/${this.props.match.params.id}`}>
+                        <Link to={`/artifacts/edit/${this.props.id}`}>
                             <button type="button" className="btn btn-secondary mx-1">Edit</button>
                         </Link>
-                        <button type="button" className="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.match.params.id)}}>Delete</button>
+                        <button type="button" className="btn btn-secondary mx-1" onClick={() => {this.props.deleteArtifact(this.props.id)}}>Delete</button>
                     </div>
                 </div>
             </div>

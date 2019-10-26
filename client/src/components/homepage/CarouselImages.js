@@ -13,7 +13,7 @@ class CarouselImages extends React.Component {
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={famImage} className="d-block w-100 h-75" alt="..."/>
+            <img src={famImage} className="d-block w-100" alt="..."/>
           </div>
           <div className="carousel-item">
             <img src={secondImage} className="d-block w-100" alt="..."/>

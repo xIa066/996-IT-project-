@@ -25,7 +25,7 @@ class App extends React.Component {
           <Route path="/create-family" component={CreateFamilyPage} />
           <Route path="/create-artifact" component={CreateArtifactPage} />
           <Route path="/artifacts" exact component={ArtifactsListPage} />
-          <Route path="/artifacts/view/:id" exact component={ArtifactPage} />
+          <Route path="/artifacts/view/:id" exact render={({match}) => (<ArtifactPage id={match.params.id}/>)} />
           <Route path="/artifacts/edit/:id" exact component={EditArtifactPage} />
         </div>
       </Router>

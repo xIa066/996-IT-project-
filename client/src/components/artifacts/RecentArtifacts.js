@@ -49,6 +49,17 @@ class RecentArtifacts extends React.Component{
                         loop
                         margin={0}
                         center
+                        responsive = {{
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 2
+                            },
+                            1200: {
+                                items: 3
+                            }                             
+                        }}
                         >
                         {this.renderList(recentList)}
                     </OwlCarousel>
