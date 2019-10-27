@@ -193,6 +193,16 @@ body {
   .btn-edit {
     margin-top: .8rem; }
 
+.update_user {
+  background-color: #F7DBA7;
+  margin: auto;
+  margin-top: 17rem;
+  padding-bottom: 40rem;
+  height: 55vh;
+  width: 40%;
+  border-radius: 2rem;
+  border-color: #272727; }
+
 .heading-secondary {
   font-size: 3.5rem;
   text-transform: uppercase;

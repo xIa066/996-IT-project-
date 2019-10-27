@@ -13,4 +13,5 @@ export const GET_FAMILY = 'GET_FAMILY';
 export const GET_FAMILY_FAIL = 'GET_FAMILY_FAIL'
 export const DELETE_MEMBER = 'DELETE_MEMBER';
 export const ADD_MEMBER = 'ADD_MEMBER';
+export const EDIT_USER = 'EDIT_USER'
 

@@ -3,9 +3,9 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
 import { createFamily } from '../../actions';
-import Loading from '../misc/Loading';
 
 class CreateFamily extends React.Component{
+    
     renderInput = ({ input, label, placeholder, id, meta }) => {
         return(
           <div className="form-group">
@@ -34,7 +34,7 @@ class CreateFamily extends React.Component{
                         <div className="create-form"> 
                             <form className="needs-validation form" onSubmit={this.props.handleSubmit(this.onSubmit)} noValidate>
                                 <div className="u-center-text u-margin-bottom-big">
-                                    <h2 class="heading-secondary">Create A Family!</h2>
+                                    <h2 className="heading-secondary">Create A Family!</h2>
                                 </div>
                                 <div className="form__group">
                                     <Field name="name" component={this.renderInput} label="Enter Name" placeholder="Title..." id="inputTitle" />

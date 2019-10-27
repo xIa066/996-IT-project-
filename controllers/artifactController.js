@@ -56,8 +56,8 @@ var findArtifactByObject = function (req, res){
 
 // find all artifacts belonging to a family group
 var findFamilyArtifacts = function(req, res){
-    var familyName = req.params.familyName;
-    Artifact.find({ family: familyName }, function(err, artifact){
+    var familyID = req.params.familyID;
+    Artifact.find({ family: familyID }, function(err, artifact){
         if(!err){
             res.send(artifact);
         }else{

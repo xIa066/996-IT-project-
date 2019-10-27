@@ -20,6 +20,7 @@ const NavBar = () => {
               <ul className="nav navbar-nav ">
                 <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/create-artifact">Create Artifact</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/my-artifacts">My Artifacts</Link></li>
                 <li className="nav-item nav-link" onMouseDown={()=> logout()}>Logout</li>
               </ul>
             </div>

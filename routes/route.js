@@ -29,7 +29,7 @@ router.get('/getArtifactsByType/:type', artifactControl.findArtifactByType);
 router.get('/families', familyControl.findAllFamilies);
 
 // Finding artifacts by family
-router.get('/getArtifactsByFamily', artifactControl.findFamilyArtifacts);
+router.get('/getArtifactsByFamily/:familyID', artifactControl.findFamilyArtifacts);
 
 // Find user by auth0ID
 router.get('/getUser/:id', userControl.getUser);
