@@ -6,6 +6,7 @@ export const FETCH_ARTIFACT = 'FETCH_ARTIFACT';
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 export const FETCH_USER = 'FETCH_USER';
 export const CREATE_USER = 'CREATE_USER';
+export const EDIT_USER = 'EDIT_USER'
 export const CREATE_FAMILY = 'CREATE_FAMILY';
 export const CREATE_FAMILY_FAIL = 'CREATE_FAMILY_FAIL';
 export const GET_FAMILIES_OWNED = 'GET_FAMILIES_OWNED';

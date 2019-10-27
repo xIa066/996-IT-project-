@@ -144,6 +144,18 @@ body {
   border-radius: 2rem;
   border-color: #272727; }
 
+.update_user {
+  background-color: #F7DBA7;
+  margin: auto;
+  margin-top: 17rem;
+  padding-bottom: 40rem;
+  height: 55vh;
+  width: 40%;
+  border-radius: 2rem;
+  border-color: #272727;   
+}
+
+
 .form__group {
   margin-left: 2rem;
   margin-right: 2rem; }

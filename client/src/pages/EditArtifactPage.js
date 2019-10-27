@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from  '../components/navigation/Navbar';
 import EditArtifact from '../components/artifacts/EditArtifact';
 

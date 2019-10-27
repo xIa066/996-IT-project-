@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from  '../components/navigation/Navbar';
 import CreateArtifact from '../components/artifacts/CreateArtifact';
 import { useAuth0 } from "../login/authWrapper";

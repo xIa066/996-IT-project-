@@ -13,6 +13,7 @@ import CreateFamilyPage from './pages/CreateFamilyPage';
 
 // import './index.css';
 import './styles/style.css';
+import UpdateUserPage from './pages/UpdateUserPage';
 
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
           <Route path="/" exact component={HomePage} />
           <Route path="/families" exact component={MyFamiliesPage} />
           <Route path="/create-family" component={CreateFamilyPage} />
+          <Route path="/update-user" exact component={UpdateUserPage} />
           <Route path="/create-artifact" component={CreateArtifactPage} />
           <Route path="/artifacts" exact component={ArtifactsListPage} />
           <Route path="/artifacts/view/:id" exact render={({match}) => (<ArtifactPage id={match.params.id}/>)} />

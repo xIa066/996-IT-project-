@@ -11,6 +11,7 @@ import {
   CREATE_USER,
   GET_FAMILIES_OWNED,
   CREATE_FAMILY,
+  EDIT_USER,
 } from './types';
 
 export const fetchArtifacts = () => async dispatch => {
@@ -55,6 +56,13 @@ export const uploadImage = fileData => async dispatch => {
   dispatch({ type: UPLOAD_IMAGE, payload: response.data });
 }
 
+export const editUser = (authUser, formValues) => async dispatch =>{
+  const response = await backend.put(`updateUser/${authUser.sub}`, formValues);
+
+  dispatch({ type: EDIT_USER, payload: response.data });
+  // history.push(`/artifacts/view/${id}`);
+}
+
 export const getUser = authUser => async dispatch => {
   const form = { 'name': authUser.nickname, "userID": authUser.sub, 'email': authUser.email }
   const user = await backend.get(`/getUser/${authUser.sub}`);
@@ -72,7 +80,6 @@ export const getOwnedFamilies = authUser => async dispatch => {
   const response = await backend.get(`/getFamiliesByOwner/${authUser.sub}`);
   dispatch({ type: GET_FAMILIES_OWNED, payload: response.data });
 }
-
 
 export const createFamily = (authUser, formValues) => async dispatch => {
   const response = await backend.post(`/createFamily/${authUser.sub}/${authUser.nickname}`, formValues);
