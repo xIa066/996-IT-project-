@@ -1,0 +1,113 @@
+.section-create {
+    padding: 0;
+    margin : 0;
+    width: 100%;
+}
+
+.create{
+    background-color: #F7DBA7;
+    margin: auto;
+    margin-top: 17rem;
+    padding-bottom: 40rem;
+    height: 60vh;
+    width: 40%;
+    border-radius: 2rem;
+    border-color: $color-off-black;
+
+    &-family{
+        height: 30vh;
+    }
+}
+
+.edit{
+    background-color: #F7DBA7;
+    margin: auto;
+    margin-top: 17rem;
+    padding-bottom: 40rem;
+    height: 40vh;
+    width: 40%;
+    border-radius: 2rem;
+    border-color: $color-off-black;
+}
+
+.create,
+.edit{
+    @media only screen and (max-width: $bp-largest) {
+        width: 55%;
+    }
+    
+    @media only screen and (max-width: $bp-medium) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        width: 90%;
+    }
+}
+
+
+.form {
+
+    color: $color-off-black;
+
+    &__group{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    &__input {
+        font-family: inherit;
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        border-radius: .2rem;
+        background-color: rgba(#fff, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        display:block;
+    }
+
+    &__input:focus{
+        outline:none;
+        border-bottom: 6px solid $color-off-black;
+    }
+
+    &__label {
+        font-family: inherit;
+        font-size: 1.5rem;
+    }
+
+    &__radio-label{
+        font-size: 2rem;
+        
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: .4rem;
+    position: relative;
+    font-size: 1.5rem;
+
+    &-submit{
+        margin-top: .4rem;
+        background-color: $color-off-black;
+        color:white;
+    }
+
+    &-edit{
+        margin-top: .8rem;
+    }
+}
+
+.update_user {
+    background-color: #F7DBA7;
+    margin: auto;
+    margin-top: 17rem;
+    padding-bottom: 40rem;
+    height: 55vh;
+    width: 40%;
+    border-radius: 2rem;
+    border-color: #272727;   
+  }

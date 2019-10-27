@@ -1,0 +1,68 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-secondary: #F7DBA7;
+$color-background: #101d2c;
+$color-grey-light: #f9f7f6;
+$color-off-black: #272727;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;  
+$bp-large: 62.5em;   
+$bp-medium: 50em;    
+$bp-small: 37.5em;   
+$bp-xsmall:32em;
+
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+h1,h2,h3,h4,h5,h6,.navbar {
+    font-family: 'News Cycle', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    padding-top: 70px;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    background-color: $color-background;
+    font-family: $font-primary;
+    color: $color-grey-light;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+
+.owl-carousel .item img {
+    height: 60vh;
+    object-fit: cover; 
+    @media only screen and (max-width: $bp-medium){
+        height: 40vh;
+    }
+}
+
+.spinner{
+    margin-top: 30vh;
+}
+
