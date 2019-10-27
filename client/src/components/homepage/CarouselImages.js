@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import './carousel.css';
+
 import famImage from '../../images/slide2.jpg';
 import secondImage from '../../images/recent2.jpg';
 import prevButton from '../../images/left.png';

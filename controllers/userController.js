@@ -55,7 +55,7 @@ var updateUserPicture = function (req, res){
 // adding a family
 var addFamily = function (req, res){
     var userID = req.params.userID;
-    var newFamily = { "familyName": req.body.familyName };
+    var newFamily = { "familyName": req.body.familyName, "familyID": req.body.familyID };
     User.findOneAndUpdate({userID: userID}, {$push: { "families": newFamily }}, {safe: true, upsert: true}, function(err, user){
         if(!err){
             console.log("Family Successfully Added");

@@ -3,7 +3,7 @@
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    color: #272727;
+    color: $color-off-black;
     letter-spacing: .2rem
 }
 
@@ -13,3 +13,26 @@
 
 }
 .u-center-text { text-align: center !important; }
+
+.banner{
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: 5vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-primary;
+    margin-top: 2rem;
+    
+    &-recent{
+        margin-top: 4rem;
+    }
+
+    @media only screen and (max-width:$bp-largest) {
+        font-size: 7vw;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        font-size:10vw;
+    }
+
+}

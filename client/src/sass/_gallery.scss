@@ -13,7 +13,7 @@
 }
 
 .artifact {
-    background-color: $color-grey-light-1;
+    background-color: $color-grey-light;
 
     display:grid;
     grid-template-columns: repeat(1, 1fr);
@@ -42,25 +42,4 @@
         color: #fff;
         font-weight: 400;
     }
-}
-
-.gallery-banner{
-    font-family: $font-display;
-    font-weight: 700;
-    font-size: 8rem;
-    text-align: center;
-    text-transform: uppercase;
-    color: $color-primary;
-    margin-top: 2rem;
-}
-
-.recent_artifact_banner{
-
-    font-family: $font-display;
-    font-weight: 700;
-    font-size: 8rem;
-    text-align: center;
-    text-transform: uppercase;
-    color: $color-primary;
-    margin-top: 4rem;
 }

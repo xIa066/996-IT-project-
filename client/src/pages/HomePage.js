@@ -5,7 +5,7 @@ import RecentArtifacts from '../components/artifacts/RecentArtifacts';
 import AllArtifacts from '../components/artifacts/AllArtifacts';
 import { useAuth0 } from "../login/authWrapper";
 
-import '../styles/Homepage.css';
+// import '../styles/Homepage.css';
 
 const HomePage = () => {
   const { isAuthenticated, user } = useAuth0();

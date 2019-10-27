@@ -23,7 +23,6 @@ class RecentArtifacts extends React.Component{
                 <Link to={`/artifacts/view/${artifact._id}`} key={artifact._id}>
                     <div className="item">
                         <img src={artifact.photo} alt="" className="artifact__item-image"/>
-                        {artifact.name}
                     </div>
                 </Link>
             );
@@ -43,7 +42,9 @@ class RecentArtifacts extends React.Component{
             }
             return(
                 <div id="projects" className="recent-projects">
-                    <h1 className="recent_artifact_banner">Recent Artifacts</h1>
+                    <h1 className="banner">
+                        <span className="banner-recent">Recent Artifacts</span>
+                    </h1>
                     <br/>
                     <OwlCarousel
                         loop
@@ -71,7 +72,6 @@ class RecentArtifacts extends React.Component{
 }
 
 const mapStateToProps = state => {
-    console.log(state.user);
     return { artifacts: Object.values(state.artifacts), user: state.user };
 }
 

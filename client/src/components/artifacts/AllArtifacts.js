@@ -26,7 +26,7 @@ class AllArtifacts extends React.Component{
         if(this.props.artifacts.length > 0){
             return(
                 <div id="body" className="all-artifacts">
-                    <h1 className="gallery-banner"><span>gallery</span></h1>
+                    <h1 className="banner"><span>gallery</span></h1>
                     <section className="product">
                         {this.renderGallery()}
                     </section>

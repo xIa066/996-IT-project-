@@ -1,11 +1,14 @@
 import React from 'react';
 import { Field, reduxForm, change } from 'redux-form';
 import { connect } from 'react-redux';
-import { createArtifact, uploadImage } from '../../actions';
+import { createArtifact, uploadImage, getUser } from '../../actions';
 
-import './imageInput.css';
 
 class CreateArtifact extends React.Component {
+
+  componentDidMount(){
+    this.props.getUser(this.props.authUser);
+  }
 
   renderError({ error, touched }){
     return(
@@ -36,7 +39,7 @@ class CreateArtifact extends React.Component {
     return(
       <div className="form-check form-check-inline form__radio-group">
         <input className="form-check-input form__radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" {...input} />
-        <label className="form-check-label form__radio-label" for="inlineRadio1">{label}</label>
+        <label className="form-check-label form__radio-label" htmlFor="inlineRadio1">{label}</label>
       </div>
     );
   }
@@ -81,6 +84,21 @@ class CreateArtifact extends React.Component {
     this.props.createArtifact(this.props.authUser, formValues);
   }
 
+  renderFamilyOptions = () => {
+    if(this.props.user.families){
+      return this.props.user.families.map((family, index) => {
+        return(
+          <React.Fragment key={index}>
+            <option value={family.familyID} >{family.familyName}</option>
+          </React.Fragment>
+        )
+      })
+    }else{
+        return null;
+    }
+    
+  }
+
   render(){
     return(
       <section className="section-create">
@@ -89,13 +107,18 @@ class CreateArtifact extends React.Component {
             <div className="create-form">
               <form className="needs-validation form" onSubmit={this.props.handleSubmit(this.onSubmit)} noValidate>
                 <div className="u-center-text u-margin-bottom-big">
-                  <h2 class="heading-secondary">Create an Artifact!</h2>
+                  <h2 className="heading-secondary">Create an Artifact!</h2>
                 </div>
                 <div className="form__group">
                   <Field name="name" component={this.renderInput} label="Enter Name" placeholder="Title..." id="inputTitle" />
                   <Field name="date" component={this.renderInput} label="Enter Date" placeholder="DD/MM/YYYY" id="inputDate" />
                   <Field name="description" component={this.renderInput} label="Enter Description" placeholder="Description..." id="inputDesc" />
                   <Field name="photo" component={this.renderImageInput} label="Enter Photo URL" placeholder="Photo URL" id="inputPhoto" /><br/>
+                  <label className="form__label mx-3">Family: </label>
+                  <Field name="family" component="select" className="form__family-selector">
+                    <option value="none"></option>
+                    {this.renderFamilyOptions()}
+                  </Field>
                   <div>
                     <label className="form__label">Artifact Type: </label>
                     <div className="form__radio">
@@ -136,7 +159,7 @@ const validate = formValues => {
 }
 
 const mapStateToProps = state => {
-  return { upload: state.upload };
+  return { upload: state.upload, user: state.user };
 }
 
 const wrappedForm = reduxForm({
@@ -144,4 +167,4 @@ const wrappedForm = reduxForm({
   validate
 })(CreateArtifact);
 
-export default connect(mapStateToProps, { change, uploadImage, createArtifact })(wrappedForm);
+export default connect(mapStateToProps, { change, uploadImage, createArtifact, getUser })(wrappedForm);

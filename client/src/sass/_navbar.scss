@@ -1,23 +1,21 @@
 .navbar-dark {
-    background:#F7DBA7;
+    background:$color-secondary;
     z-index: 99999;
 }
 
 .navbar-dark a {
-    /*color:rgb(153,160,162);*/
     color: white;
 }
 
 .navbar-dark .navbar-brand {
     height: 6rem;
     font-size: 2.3rem;
-    padding: 1.2rem;
-    margin-left: -8rem; 
+    padding: 1.2rem; 
     color:#272727;
 }
 
 .justify-content-end {
-  margin-right: -3em;
+  margin-right: auto;
 }
 
 .nav-link {
@@ -46,5 +44,9 @@
 
 .navbar-dark .navbar-nav .nav-link{
     color: #272727;
+}
+
+.navbar-toggler{
+    background-color: $color-off-black;
 }
 

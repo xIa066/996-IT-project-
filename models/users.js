@@ -9,7 +9,7 @@ var userSchema = new mongoose.Schema(
 		"dob": { type: String, default: null },
 		"bio": { type: String, default: null },
 		"photo": { type: String, default: null },
-		"families": [{ "familyName": String }]
+		"families": [{ "familyName": String, "familyID": String }]
 	},
 	{
 		collection: "users"

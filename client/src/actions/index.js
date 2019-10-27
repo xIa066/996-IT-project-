@@ -61,7 +61,6 @@ export const getUser = authUser => async dispatch => {
   //if user isn't in database
   if(!user.data){
     const response = await backend.post('/createUser', form)
-    console.log(response.data);
     dispatch({ type: CREATE_USER, payload: response.data });
   }else{
     dispatch({ type: FETCH_USER, payload: user.data});
@@ -76,6 +75,5 @@ export const getOwnedFamilies = authUser => async dispatch => {
 
 export const createFamily = (authUser, formValues) => async dispatch => {
   const response = await backend.post(`/createFamily/${authUser.sub}/${authUser.nickname}`, formValues);
-  console.log(response.data);
   dispatch({ type: CREATE_FAMILY, payload: response.data });
 }
