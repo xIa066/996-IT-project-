@@ -13,7 +13,7 @@ const EditArtifactPage = props => {
             {!user && (<Loading />)}
             {user && (
                 <div className="container-fluid">
-                    <EditArtifact id={this.props.id} />
+                    <EditArtifact id={props.id} />
                 </div>
             )}
             
