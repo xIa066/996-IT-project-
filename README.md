@@ -11,6 +11,4 @@ Clients want to devise a web application to display memoriable items or stories,
 4. client can delete all existing e-porfolio they've created 
 
 # Configurations
-1.
-2.
-3.
+https://github.com/xIa066/996-IT-project-/blob/master/client/README.md
